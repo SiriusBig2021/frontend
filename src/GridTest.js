@@ -1,6 +1,7 @@
 import React from "react";
 import "./GridTest.css";
 import NestedList from "./DropdownListTest.js";
+import TrainList from "./ScrollableListOfTrainds.js"
 
 export default class GridTest extends React.Component {
     render() {
@@ -8,7 +9,7 @@ export default class GridTest extends React.Component {
             <div className='GridContainer'>
                 <div className='LiveWindow'>LiveWindow</div>
                 <div className='ArchiveWindow'>
-                    <NestedList/>
+                    <TrainList/>
                 </div>
                 <div className='LogWindow'>LogWindow</div>
             </div>
