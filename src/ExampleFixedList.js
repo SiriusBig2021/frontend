@@ -31,8 +31,7 @@ function renderRow() {
     ]
     
     count++;
-    alert(count);
-    let _wagon = wagonList[count];
+    let _wagon = wagonList[3];
 
   return (
     <WagonElement wagon={_wagon}/>
@@ -51,7 +50,7 @@ export default function VirtualizedList() {
 
   return (
     <div className={classes.root}>
-      <FixedSizeList height={850} width={470} itemSize={46} itemCount={8}>
+      <FixedSizeList height={850} width={470} itemSize={46} itemCount={32}>
             {renderRow}
       </FixedSizeList>
     </div>
