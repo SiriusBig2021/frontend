@@ -29,24 +29,38 @@ export default function NestedList() {
     {number: 77777777, state: 'empty', time1: '00:00', time2: '00:00'},
     {number: 88888888, state: 'empty', time1: '00:00', time2: '00:00'},
     {number: 99999999, state: 'empty', time1: '00:00', time2: '00:00'},
+    {number: 10000001, state: 'full', time1: '00:00', time2: '00:00'},
+    {number: 12222221, state: 'empty', time1: '00:00', time2: '00:00'},
+    {number: 22222222, state: 'full', time1: '00:00', time2: '00:00'},
+    {number: 33333333, state: 'full', time1: '00:00', time2: '00:00'},
+    {number: 44444444, state: 'full', time1: '00:00', time2: '00:00'},
+    {number: 55555555, state: 'full', time1: '00:00', time2: '00:00'},
+    {number: 66666666, state: 'full', time1: '00:00', time2: '00:00'},
+    {number: 77777777, state: 'empty', time1: '00:00', time2: '00:00'},
+    {number: 88888888, state: 'empty', time1: '00:00', time2: '00:00'},
+    {number: 99999999, state: 'empty', time1: '00:00', time2: '00:00'},
     {number: 10000001, state: 'full', time1: '00:00', time2: '00:00'}
     ]
 
     return (
-        <List
-            component="nav"
-            aria-labelledby="nested-list-subheader"
-            subheader={
-                <ListSubheader component="div" id="nested-list-subheader">Wagon List</ListSubheader>
-            }
-            className={classes.root}
-        >
-            {wagonList.map(wagon => {
-                return (
-                    <WagonElement wagon={wagon} classNames={classes.nested}/>
-                )
-            })}
-        </List>
+        <div className='FixedHeightArchieveTable'>
+            <div className='Content'>
+                <List
+                    component="nav"
+                    aria-labelledby="nested-list-subheader"
+                    subheader={
+                        <ListSubheader component="div" id="nested-list-subheader">Wagon List</ListSubheader>
+                    }
+                    className={classes.root}
+                >
+                    {wagonList.map(wagon => {
+                        return (
+                            <WagonElement wagon={wagon} classNames={classes.nested}/>
+                        )
+                    })}
+                </List>
+            </div>
+        </div>
     );
 }
 

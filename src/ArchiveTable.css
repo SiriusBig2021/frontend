@@ -9,3 +9,14 @@
 .WagonImageInWagonElement {
     padding-right: 20px;
 }
+
+.FixedHeightArchieveTable {
+    float:right;
+    height:100%;
+    width:100%;
+}
+
+.Content {
+    height:100%;
+    overflow:auto;
+}
