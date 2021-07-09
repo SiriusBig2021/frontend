@@ -13,6 +13,9 @@ const Wrapper = styled.aside`
   font-size: ${fontsize.H3FONTSIZE}
 `;
 
+/*
+ПРИМЕР ФОРМАТА ДАННЫХ ДЛЯ СПИСКОВ
+
 const menus = [
     {
         label:"Train1",
@@ -60,7 +63,7 @@ const menus = [
     }
 ];
 
-
+*/
 
 
 

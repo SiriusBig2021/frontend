@@ -1,8 +1,9 @@
 import React from "react";
 import "./GridTest.css";
-import TrainList from "./ScrollableListOfTrainds.js";
+//import TrainList from "./ScrollableListOfTrainds.js";
 import MultiMenusList from "./constants.js";
 import "./ArchiveTable.css";
+import LogScreen from "./LogDisplay.js";
 
 export default class GridTest extends React.Component {
     render() {
@@ -16,7 +17,11 @@ export default class GridTest extends React.Component {
                         <MultiMenusList/>
                     </div>
                 </div>
-                <div className='LogWindow'>LogWindow</div>
+                <div className='LogWindow'>
+                    <div className='ContentHolder'>
+                        <LogScreen/>
+                    </div>
+                </div>
             </div>
         )
     }

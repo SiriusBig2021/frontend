@@ -5,7 +5,7 @@
     width: 100vw;
     grid-template-areas: "liveWindow archiveWindow" "logWindow archiveWindow";
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 3fr 1fr;
+    grid-template-rows: 3fr 2fr;
 }
 
 .LiveWindow {
@@ -17,13 +17,13 @@
 .ArchiveWindow {
     grid-area: archiveWindow;
     text-align: center;
-    background-color: blueviolet;
+    background-color: #f0f0f0;
 }
 
 .LogWindow {
     grid-area: logWindow;
     text-align: center;
-    background-color: brown;
+    background-color: #f0f0f0;
 }
 
 * {

@@ -18,6 +18,7 @@
 
 .ContentHolder {
     height:100%;
+    max-height:100%;
     overflow:auto;
 }
 
@@ -33,4 +34,31 @@
     float:right;
     height:100%;
     width:100%;
+}
+
+.LogWindow {
+    float:right;
+    height:100%;
+    width:100%;
+}
+
+.LogHolder {
+    float:right;
+    height:100%;
+    max-height:350px;
+    width:100%;
+}
+
+.LogElement {
+    text-align: left;
+    font-size: 15px;
+    color: black;
+    overflow: auto;
+}
+
+.LogElementFail {
+    text-align: left;
+    font-size: 15px;
+    color: red;
+    overflow: auto;
 }
