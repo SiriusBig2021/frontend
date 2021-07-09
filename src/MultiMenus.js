@@ -1,5 +1,9 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const complexMixin = css`
+  color: ${props => (props.whiteColor ? 'white' : 'black')};
+`;
 
 const UL = styled.ul`
   list-style: none;
@@ -9,8 +13,8 @@ const UL = styled.ul`
 const LI = styled.li``;
 const Item = styled.div`
   display: flex;
-  padding: 12px 18px;
-  padding-left: ${props => `${props.dept * 18}px`};
+  padding: 5px 18px;
+  border: 1px solid ${props => (props.dept-1 ? '#d3d3d3' : 'black')};
   align-items: center;
 `;
 const Label = styled.span`

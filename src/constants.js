@@ -1,11 +1,16 @@
-import React from "react";
 import styled from "styled-components";
 import MultiMenus from "./MultiMenus";
 import "./ArchiveTable.css";
 
+const fontsize = {
+    H3FONTSIZE: '20px',
+  }
+
 const Wrapper = styled.aside`
-  background: #fff;
+  background: #f0f0f0;
   width: 100%;
+  text-align: left;
+  font-size: ${fontsize.H3FONTSIZE}
 `;
 
 const menus = [
