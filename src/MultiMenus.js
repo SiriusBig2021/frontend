@@ -14,7 +14,7 @@ const LI = styled.li``;
 const Item = styled.div`
   display: flex;
   padding: 5px 18px;
-  border: 1px solid ${props => (props.dept-1 ? '#d3d3d3' : 'black')};
+  border: ${props => (props.dept-1 ? '1px' : '2px')} solid ${props => (props.dept-1 ? (props.dept-2 ? '#f0f0f0' : '#d3d3d3') : 'black')};
   align-items: center;
 `;
 const Label = styled.span`

@@ -28,3 +28,9 @@
 .WrapperClass {
     color:black;
 }
+
+.ArchiveWindow {
+    float:right;
+    height:100%;
+    width:100%;
+}

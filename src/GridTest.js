@@ -1,9 +1,8 @@
 import React from "react";
 import "./GridTest.css";
-import NestedList from "./DropdownListTest.js";
 import TrainList from "./ScrollableListOfTrainds.js";
 import MultiMenusList from "./constants.js";
-import { MultilevelMenu } from "react-multilevel-menu";
+import "./ArchiveTable.css";
 
 export default class GridTest extends React.Component {
     render() {
@@ -13,7 +12,9 @@ export default class GridTest extends React.Component {
                     LiveWindow
                 </div>
                 <div className='ArchiveWindow'>
-                    <MultiMenusList/>
+                    <div className='ContentHolder'>
+                        <MultiMenusList/>
+                    </div>
                 </div>
                 <div className='LogWindow'>LogWindow</div>
             </div>
