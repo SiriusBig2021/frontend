@@ -1,3 +1,5 @@
+import language from "./language.json";
+
 import "./ArchiveTable.css";
 import React from 'react';
 import Modal from 'react-modal';
@@ -5,7 +7,7 @@ import number_photo_example from './assets/images/number_photo_example.jpg';
 
 const currentWagonList = [
     {number: 13583243, state: 'full', time1: '00:00', time2: '00:00'},
-    {number: 'corrupted', state: 'fail', time1: '00:00', time2: '00:00'},
+    {number: 'повреждён', state: 'fail', time1: '00:00', time2: '00:00'},
     {number: 23235799, state: 'empty', time1: '00:00', time2: '00:00'},
     {number: 45215452, state: 'full', time1: '00:00', time2: '00:00'},
     {number: 18451543, state: 'empty', time1: '00:00', time2: '00:00'},
@@ -64,14 +66,14 @@ export default function LiveScreen() {
                                 <img src={number_photo_example} className='ModalImage'/>
                             </div>
                             <div className='ModalContentSegment'>
-                                Wagon's number:
+                                {language.LiveScreen.WagonsNumber}
                                 <input type="text" className='ModalInputField' onChange={updateInputNumber}/>
-                                Wagon's state:
+                                {language.LiveScreen.WagonsState}
                                 <input type="text" className='ModalInputField' onChange={updateInputState}/>
                             </div>
                             <div className='ModalButtonSegment'>
-                                <button className='ModalCloseButton' onClick={handleClick}>Close</button>
-                                <button className='ModalAcceptButton' onClick={handleApplyClick}>Apply</button>
+                                <button className='ModalCloseButton' onClick={handleClick}>{language.LiveScreen.CloseButton}</button>
+                                <button className='ModalAcceptButton' onClick={handleApplyClick}>{language.LiveScreen.ApplyButton}</button>
                             </div>
                         </div>
                     </Modal>
@@ -79,7 +81,7 @@ export default function LiveScreen() {
                         {currentWagonList[arguments[0].segment-1].number}
                     </div>
                     <div className='LiveWagonErrorState'>
-                        <div onClick={handleClick}>FIX</div>
+                        <div onClick={handleClick}>{language.LiveScreen.Fix}</div>
                     </div>
                 </div>
             );
@@ -87,10 +89,10 @@ export default function LiveScreen() {
             return (
                 <div>
                     <div className='LiveWagonNumber'>
-                        {currentWagonList[arguments[0].segment-1].number}
+                        {currentWagonList[arguments[0].segment-1].number}   
                     </div>
                     <div className='LiveWagonState'>
-                        {currentWagonList[arguments[0].segment-1].state}
+                        {currentWagonList[arguments[0].segment-1].state == "full" ? language.LiveScreen.FullState : (currentWagonList[arguments[0].segment-1].state == "empty" ? language.LiveScreen.EmptyState : language.LiveScreen.ErrorState)}
                     </div>
                 </div>
             );

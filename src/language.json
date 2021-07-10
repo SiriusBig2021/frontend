@@ -15,6 +15,13 @@
         "Damaged": "ЛОГ ПОВРЕЖДЁН"
     },
     "LiveScreen": {
-
+        "WagonsNumber": "Номер вагона:",
+        "WagonsState": "Состояние:",
+        "CloseButton": "Закрыть",
+        "ApplyButton": "Применить",
+        "Fix": "ИСПРАВИТЬ",
+        "EmptyState": "Пустой",
+        "FullState": "Полный",
+        "ErrorState": "Ошибка"
     }
 }
