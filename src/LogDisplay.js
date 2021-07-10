@@ -32,7 +32,7 @@ const logs = [
         time:'00:00:00'
     },
     {
-        eventType:'arrive', //arrive, departure, fail (?)
+        eventType:'arrive', 
         wagon:'1249-4523',
         time:'00:00:00'
     },
@@ -92,7 +92,7 @@ const logs = [
         time:'00:00:00'
     },
     {
-        eventType:'arrive', //arrive, departure, fail (?)
+        eventType:'arrive',
         wagon:'4759-9732',
         time:'00:00:00'
     },

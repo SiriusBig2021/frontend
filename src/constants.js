@@ -145,7 +145,7 @@ function generateMenus() {
         GeneratedMenus.push(TrainObject);
     }
 
-    console.log(GeneratedMenus);
+    //console.log(GeneratedMenus);
     return GeneratedMenus;
 }
 
