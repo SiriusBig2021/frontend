@@ -5,6 +5,14 @@ const complexMixin = css`
   color: ${props => (props.whiteColor ? 'white' : 'black')};
 `;
 
+const fontsize = {
+  H3FONTSIZE: '25px', //Размер шрифта списка
+}
+
+const fontsize2 = {
+  H3FONTSIZE: '17px', //Размер шрифта описания вагонов в списке
+}
+
 const UL = styled.ul`
   list-style: none;
   margin: 0;
@@ -13,14 +21,18 @@ const UL = styled.ul`
 const LI = styled.li``;
 const Item = styled.div`
   display: flex;
-  padding: 5px 18px;
+  padding: ${props => (props.dept-1 ? (props.dept-2 ? '1px' : '5px') : '5px')} 18px;
   border: ${props => (props.dept-1 ? '1px' : '2px')} solid ${props => (props.dept-1 ? (props.dept-2 ? '#f0f0f0' : '#d3d3d3') : 'black')};
+  border-radius: 5px;
   align-items: center;
+  font-size: ${props => (props.dept-1 ? (props.dept-2 ? fontsize2.H3FONTSIZE : fontsize.H3FONTSIZE) : fontsize.H3FONTSIZE)};
+  background-color: ${props => (props.dept-1 ? (props.dept-2 ? '#f0f0f0' : '#eaeaea') : '#d3d3d3')};
 `;
 const Label = styled.span`
   width: 100%;
   display: block;
   cursor: pointer;
+  
 `;
 const Arrow = styled.span`
   display: flex;
