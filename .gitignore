@@ -7,6 +7,7 @@
 
 # testing
 /coverage
+/src/TRASH.txt
 
 # production
 /build
@@ -21,3 +22,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# previous solutions
+/src/DropdownListTest.js
+/src/ScrollableListOfTrains.js
+/src/MyMap.js
+/src/WagonElement.js
+/src/TrainElement.js
