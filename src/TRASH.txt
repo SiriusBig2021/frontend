@@ -1,6 +1,0 @@
-<Button variant="contained" onClick={handleClick} className='ModalButton'>
-                                    CLOSE
-                                </Button>
-                                <Button variant="contained" color="primary" onClick={handleAcceptClick} className='ModalButton'>
-                                    APPLY
-                                </Button>
