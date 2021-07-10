@@ -1,11 +1,11 @@
 import "./ArchiveTable.css";
 import React from 'react';
 import Modal from 'react-modal';
-import Button from '@material-ui/core/Button';
+import number_photo_example from './assets/images/number_photo_example.jpg';
 
 const currentWagonList = [
     {number: 13583243, state: 'full', time1: '00:00', time2: '00:00'},
-    {number: 45234320, state: 'fail', time1: '00:00', time2: '00:00'},
+    {number: 'corrupted', state: 'fail', time1: '00:00', time2: '00:00'},
     {number: 23235799, state: 'empty', time1: '00:00', time2: '00:00'},
     {number: 45215452, state: 'full', time1: '00:00', time2: '00:00'},
     {number: 18451543, state: 'empty', time1: '00:00', time2: '00:00'},
@@ -15,6 +15,8 @@ const currentWagonList = [
 
 export default function LiveScreen() {
     const [open, setOpen] = React.useState(false);
+    const [inputNumber, setInputNumber] = React.useState("");
+    const [inputState, setInputState] = React.useState("");
 
     const handleClick = () => {
         setOpen(!open);
@@ -28,9 +30,18 @@ export default function LiveScreen() {
         setOpen(false);
     };
 
-    const handleAcceptClick = () => {
+    const handleApplyClick = () => {
+        console.log("EDIT: Number is "+inputNumber + ", state is "+inputState);
         setOpen(!open);
     };
+
+    const updateInputNumber = event => {
+        setInputNumber(event.target.value);
+    }
+
+    const updateInputState = event => {
+        setInputState(event.target.value);
+    }
     
     if(currentWagonList.length < arguments[0].segment) {
         return (
@@ -50,14 +61,17 @@ export default function LiveScreen() {
                     >
                         <div className='ModalGridContainer'>
                             <div className='ModalImageSegment'>
-                                SOME IMAGE
+                                <img src={number_photo_example} className='ModalImage'/>
                             </div>
                             <div className='ModalContentSegment'>
-                                HERE COULD BE YOUR AD
+                                Wagon's number:
+                                <input type="text" className='ModalInputField' onChange={updateInputNumber}/>
+                                Wagon's state:
+                                <input type="text" className='ModalInputField' onChange={updateInputState}/>
                             </div>
                             <div className='ModalButtonSegment'>
                                 <button className='ModalCloseButton' onClick={handleClick}>Close</button>
-                                <button className='ModalAcceptButton' onClick={handleClick}>Apply</button>
+                                <button className='ModalAcceptButton' onClick={handleApplyClick}>Apply</button>
                             </div>
                         </div>
                     </Modal>
