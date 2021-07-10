@@ -84,6 +84,7 @@
 .LiveWagonErrorState {
     color: red;
     font-weight: bold;
+    cursor: pointer;
 }
 
 .ModalOverlay {
@@ -158,6 +159,7 @@
     padding-right: 10px;
     border: 1px solid #d3d3d3;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .ModalAcceptButton {
@@ -169,4 +171,5 @@
     padding-right: 10px;
     border: 1px solid #d3d3d3;
     border-radius: 5px;
+    cursor: pointer;
 }
