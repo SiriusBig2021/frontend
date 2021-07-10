@@ -1,11 +1,9 @@
 import React from "react";
 import "./GridTest.css";
-//import TrainList from "./ScrollableListOfTrainds.js";
 import MultiMenusList from "./constants.js";
 import "./ArchiveTable.css";
 import LogScreen from "./LogDisplay.js";
 import LiveScreen from "./LiveDisplay.js";
-import Modal from 'react-modal';
 
 export default class GridTest extends React.Component {
 

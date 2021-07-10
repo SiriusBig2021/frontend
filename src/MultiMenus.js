@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
+import "./ArchiveTable.css";
 
 const complexMixin = css`
   color: ${props => (props.whiteColor ? 'white' : 'black')};
@@ -27,12 +28,12 @@ const Item = styled.div`
   align-items: center;
   font-size: ${props => (props.dept-1 ? (props.dept-2 ? fontsize2.H3FONTSIZE : fontsize.H3FONTSIZE) : fontsize.H3FONTSIZE)};
   background-color: ${props => (props.dept-1 ? (props.dept-2 ? '#f0f0f0' : '#eaeaea') : '#d3d3d3')};
-`;
+  color: ${props => (props.dept-2 ? (props.dept-1 ? '#787878' : '#000') : '#545454')};
+  `;
 const Label = styled.span`
   width: 100%;
   display: block;
   cursor: pointer;
-  
 `;
 const Arrow = styled.span`
   display: flex;
@@ -80,7 +81,7 @@ const MultiMenus = ({ menus }) => {
   const ListMenu = ({ dept, data, hasSubMenu, menuName, menuIndex }) => (
     <LI>
       <Item dept={dept}>
-        <Label onClick={() => handleMenuClick(data)}>{data.label} </Label>
+        <Label onClick={() => handleMenuClick(data)} className={(data.label == 'full' ? 'FullItem' : (data.label == 'empty' ? 'EmptyItem' : 'ContentItem'))} >{data.label} </Label>
         {hasSubMenu && (
           <Arrow
             onClick={() => handleArrowClick(menuName)}
