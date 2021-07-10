@@ -1,0 +1,189 @@
+.WagonList {
+    color:black;
+}
+
+.WagonElementInfo {
+    padding:5px;
+}
+
+.WagonImageInWagonElement {
+    padding-right: 20px;
+}
+
+.ArchieveHolder {
+    float:right;
+    height:100%;
+    width:100%;
+}
+
+.ContentHolder {
+    height:100%;
+    max-height:100%;
+    overflow:auto;
+}
+
+.TrainListElement {
+    color:black;
+}
+
+.WrapperClass {
+    color:black;
+}
+
+.ArchiveWindow {
+    float:right;
+    height:100%;
+    width:100%;
+}
+
+.LogWindow {
+    float:right;
+    height:100%;
+    width:100%;
+}
+
+.LogHolder {
+    float:right;
+    height:100%;
+    max-height:350px;
+    width:100%;
+}
+
+.LogElement {
+    text-align: left;
+    font-size: 15px;
+    color: black;
+    overflow: auto;
+}
+
+.LogElementFail {
+    text-align: left;
+    font-size: 15px;
+    color: red;
+    overflow: auto;
+}
+
+.LiveWagonNumber {
+    color:green;
+    padding:7px;
+}
+
+.LiveWagonState {
+    color: yellow;
+}
+
+.LiveWagonEmptyWindow {
+    padding: 20px;
+}
+
+.LiveWagonError {
+    color: red;
+    padding: 7px;
+}
+
+.LiveWagonErrorState {
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.ModalOverlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 100;
+    background-color: rgba(255, 255, 255, 0.7);
+}
+
+.Modal {
+    position: relative;
+    z-index: 200;
+    border: 2px solid #787878;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    max-width: 30vw;
+    max-height: 30vh;
+    left: 35vw;
+    right: 35vw;
+    top: 35vh;
+    bottom: 35vh;
+}
+
+.ModalGridContainer {
+    position: relative;
+    z-index: 500;
+    display: grid;
+    gap: 5px;
+    height: 100%;
+    width: 100%;
+    grid-template-areas: "imageArea contentArea" "imageArea buttonArea";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.ModalImageSegment {
+    grid-area: imageArea;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+    background-color: white;
+    padding: 20px;
+}
+
+.ModalContentSegment {
+    grid-area: contentArea;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+    background-color: white;
+    padding: 20px;
+    padding-top: 50px;
+    font-size: 20px;
+}
+
+.ModalButtonSegment {
+    grid-area: buttonArea;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+    background-color: white;
+    padding: 15px;
+}
+
+.ModalCloseButton {
+    position: relative;
+    left: -5%;
+    font-size: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ModalAcceptButton {
+    position: relative;
+    left: 5%;
+    font-size: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.ModalInputField {
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.ModalImage {
+    max-height: 100%;
+    max-width: 100%;
+    padding-top: 22px;
+}

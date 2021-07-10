@@ -1,0 +1,163 @@
+.GridContainer {
+    display: grid;
+    gap: 20px;
+    height: 100vh;
+    width: 100vw;
+    grid-template-areas: "liveWindow archiveWindow" "logWindow archiveWindow";
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 3fr 2fr;
+}
+
+.LiveWindow {
+    grid-area: liveWindow;
+    display: grid;
+    gap: 25px;
+    height: 100%;
+    width: 100%;
+    grid-template-areas: "q1 q2 q3 q4 q5" "q6 q7 q8 q9 q10" "q11 q12 q13 q14 q15" "q16 q17 q18 q19 q20" "q21 q22 q23 q24 q25";
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.ArchiveWindow {
+    grid-area: archiveWindow;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.LogWindow {
+    grid-area: logWindow;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.q1 {
+    grid-area: q1;
+    background-color: #d3d3d3;
+}
+
+.q2 {
+    grid-area: q2;
+    background-color: #d3d3d3;
+}
+
+.q3 {
+    grid-area: q3;
+    background-color: #d3d3d3;
+}
+
+.q4 {
+    grid-area: q4;
+    background-color: #d3d3d3;
+}
+
+.q5 {
+    grid-area: q5;
+    background-color: #d3d3d3;
+}
+
+.q6 {
+    grid-area: q6;
+    background-color: #d3d3d3;
+}
+
+.q7 {
+    grid-area: q7;
+    background-color: #d3d3d3;
+}
+
+.q8 {
+    grid-area: q8;
+    background-color: #d3d3d3;
+}
+
+.q9 {
+    grid-area: q9;
+    background-color: #d3d3d3;
+}
+
+.q10 {
+    grid-area: q10;
+    background-color: #d3d3d3;
+}
+
+.q11 {
+    grid-area: q11;
+    background-color: #d3d3d3;
+}
+
+.q12 {
+    grid-area: q12;
+    background-color: #d3d3d3;
+}
+
+.q13 {
+    grid-area: q13;
+    background-color: #d3d3d3;
+}
+
+.q14 {
+    grid-area: q14;
+    background-color: #d3d3d3;
+}
+
+.q15 {
+    grid-area: q15;
+    background-color: #d3d3d3;
+}
+
+.q16 {
+    grid-area: q16;
+    background-color: #d3d3d3;
+}
+
+.q17 {
+    grid-area: q17;
+    background-color: #d3d3d3;
+}
+
+.q18 {
+    grid-area: q18;
+    background-color: #d3d3d3;
+}
+
+.q19 {
+    grid-area: q19;
+    background-color: #d3d3d3;
+}
+
+.q20 {
+    grid-area: q20;
+    background-color: #d3d3d3;
+}
+
+.q21 {
+    grid-area: q21;
+    background-color: #d3d3d3;
+}
+
+.q22 {
+    grid-area: q22;
+    background-color: #d3d3d3;
+}
+
+.q23 {
+    grid-area: q23;
+    background-color: #d3d3d3;
+}
+
+.q24 {
+    grid-area: q24;
+    background-color: #d3d3d3;
+}
+
+.q25 {
+    grid-area: q25;
+    background-color: #d3d3d3;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
