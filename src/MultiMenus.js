@@ -1,3 +1,5 @@
+import language from "./language.json";
+
 import React, { useState } from "react";
 import styled, { css } from "styled-components";
 import "./ArchiveTable.css";
@@ -81,7 +83,7 @@ const MultiMenus = ({ menus }) => {
   const ListMenu = ({ dept, data, hasSubMenu, menuName, menuIndex }) => (
     <LI>
       <Item dept={dept}>
-        <Label onClick={() => handleMenuClick(data)} className={(data.label == 'full' ? 'FullItem' : (data.label == 'empty' ? 'EmptyItem' : 'ContentItem'))} >{data.label} </Label>
+        <Label onClick={() => handleMenuClick(data)} className={(data.label == language.ArchiveScreen.Full ? 'FullItem' : (data.label == language.ArchiveScreen.Empty ? 'EmptyItem' : 'ContentItem'))} >{data.label} </Label>
         {hasSubMenu && (
           <Arrow
             onClick={() => handleArrowClick(menuName)}

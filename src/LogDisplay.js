@@ -1,3 +1,5 @@
+import language from "./language.json";
+
 import "./ArchiveTable.css";
 
 const logs = [
@@ -192,22 +194,22 @@ export default function LogScreen() {
                         switch(log.eventType) {
                             case 'arrive':
                                 return (
-                                    <div className='LogElement'>[{log.time}] Wagon {log.wagon} arrived to the station.</div>
+                                    <div className='LogElement'>[{log.time}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Arrived}</div>
                                 )
                                 break;
                             case 'departure':
                                 return (
-                                    <div className='LogElement'>[{log.time}] Wagon {log.wagon} departured from the station.</div>
+                                    <div className='LogElement'>[{log.time}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Departured}</div>
                                 )
                                 break;
                             case 'fail':
                                 return (
-                                    <div className='LogElementFail'>[{log.time}] Wagon {log.wagon}: FAILED LOG. CLICK HERE FOR DETAILS</div>
+                                    <div className='LogElementFail'>[{log.time}] {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
                                 )
                                 break;
                             default:
                                 return (
-                                    <div className='LogElementFail'>[{log.time}] LOG DAMAGED</div>
+                                    <div className='LogElementFail'>[{log.time}] {language.LogScreen.Damaged}</div>
                                 )
                                 break;
                         }

@@ -1,0 +1,20 @@
+{
+    "ArchiveScreen": {
+        "TrainLabel": "Поезд ",
+        "TotalTime": "Время загрузки: ",
+        "ArrivedAt": "Прибыл в ",
+        "DeparturedAt": "Ушёл в ",
+        "Full": "Полный",
+        "Empty": "Пустой"
+    },
+    "LogScreen": {
+        "Wagon": "Вагон",
+        "Arrived": "прибыл на станцию.",
+        "Departured": "ушёл со станции.",
+        "Failed": "ОШИБКА. Нажмите для получения информации",
+        "Damaged": "ЛОГ ПОВРЕЖДЁН"
+    },
+    "LiveScreen": {
+
+    }
+}

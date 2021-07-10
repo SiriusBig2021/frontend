@@ -1,6 +1,8 @@
 //ФОРМАТИРОВАНИЕ ДАННЫХ ИЗ БД В ФОРМАТ, ПРИГОДНЫЙ ДЛЯ СПИСКОВ
 //ВЫЗОВ СПИСКА
 
+import language from "./language.json";
+
 import styled from "styled-components";
 import MultiMenus from "./MultiMenus";
 import "./ArchiveTable.css";
@@ -123,8 +125,8 @@ function generateMenus() {
             submenu: []
         }
 
-        TrainObject.label = "Train "+(i+1);
-        TrainObject.submenu[0] = {label: "Total time: "+trainList[i].time};
+        TrainObject.label = language.ArchiveScreen.TrainLabel+(i+1);
+        TrainObject.submenu[0] = {label: language.ArchiveScreen.TrainLabel+trainList[i].time};
 
         for(let j = 0; j < (trainList[i].wagons).length; j++) {
             let WagonObject = {
@@ -133,9 +135,16 @@ function generateMenus() {
             }
 
             WagonObject.label = (trainList[i].wagons[j]).number;
-            WagonObject.submenu[0] = {label: (trainList[i].wagons[j]).state};
-            WagonObject.submenu[1] = {label: "Arrived at " + (trainList[i].wagons[j]).time1};
-            WagonObject.submenu[2] = {label: "Departured at " + (trainList[i].wagons[j]).time2};
+            WagonObject.submenu[1] = {label: language.ArchiveScreen.ArrivedAt + (trainList[i].wagons[j]).time1};
+            WagonObject.submenu[2] = {label: language.ArchiveScreen.DeparturedAt + (trainList[i].wagons[j]).time2};
+
+            if((trainList[i].wagons[j]).state == 'empty') {
+                WagonObject.submenu[0] = {label: language.ArchiveScreen.Empty + ""};
+            } else if((trainList[i].wagons[j]).state == 'full') {
+                WagonObject.submenu[0] = {label: language.ArchiveScreen.Full + ""};
+            } else {
+                WagonObject.submenu[0] = {label: (trainList[i].wagons[j]).state};
+            }
 
             (TrainObject.submenu).push(WagonObject);
         }
