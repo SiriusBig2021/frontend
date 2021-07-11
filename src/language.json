@@ -23,5 +23,9 @@
         "EmptyState": "Пустой",
         "FullState": "Полный",
         "ErrorState": "Ошибка"
+    },
+    "ToolBar": {
+        "TimeGone": "Время смены:",
+        "WagonsGone": "Вагонов загружено:"
     }
 }

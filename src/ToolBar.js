@@ -1,5 +1,6 @@
 import logo from "./assets/images/logo.png";
 import "./ArchiveTable.css";
+import language from "./language.json";
 
 export default function ToolBarScreen() {
 
@@ -8,10 +9,10 @@ export default function ToolBarScreen() {
         <div className='ToolBarHolder'>
             <img src={logo} className='LogoImage' height="80"/>
             <div className='ToolBarTimeStatus'>
-                Время смены: 00:00:00
+                {language.ToolBar.TimeGone} 00:00:00
             </div>
             <div className='ToolBarWagonStatus'>
-                Вагонов загружено: 218
+                {language.ToolBar.WagonsGone} 218
             </div>
         </div>
     )
