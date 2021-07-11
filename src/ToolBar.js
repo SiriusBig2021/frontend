@@ -2,26 +2,25 @@ import logo from "./assets/images/logo.png";
 import "./ArchiveTable.css";
 import language from "./language.json";
 import React from "react";
-import { StayCurrentLandscapeTwoTone } from "@material-ui/icons";
 
 class Clock extends React.Component {
     constructor(props) {
-      super(props);
-      this.state = {
-        time: new Date(),
-      };
+        super(props);
+        this.state = {
+            time: new Date(),
+        };
     }
 
     componentDidMount() {
-      this.intervalID = setInterval(() => this.tick(), 1000);
+        this.intervalID = setInterval(() => this.tick(), 1000);
     }
     componentWillUnmount() {
-      clearInterval(this.intervalID);
+        clearInterval(this.intervalID);
     }
     tick() {
-      this.setState({
-        time: new Date(),
-      });
+        this.setState({
+            time: new Date(),
+        });
     }
 
     render() {

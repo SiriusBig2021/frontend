@@ -213,6 +213,7 @@
     background-color: #d3d3d3;
     border: 2px solid #787878;
     border-radius: 9px;
+    visibility: visible;
 }
 
 * {

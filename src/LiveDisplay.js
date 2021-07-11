@@ -47,7 +47,7 @@ export default function LiveScreen() {
     
     if(currentWagonList.length < arguments[0].segment) {
         return (
-            <div className='LiveWagonEmptyWindow'>. . .</div>
+            <div className='LiveWagonEmptyWindow'></div>
         );
     } else {
         if(currentWagonList[arguments[0].segment-1].state === 'fail') {
