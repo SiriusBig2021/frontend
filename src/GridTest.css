@@ -1,17 +1,24 @@
 .GridContainer {
     display: grid;
-    gap: 20px;
+    background-color: #000;
+    gap: 5px;
     height: 100vh;
     width: 100vw;
-    grid-template-areas: "liveWindow archiveWindow" "logWindow archiveWindow";
+    grid-template-areas: "toolBar toolBar" "liveWindow archiveWindow" "logWindow archiveWindow";
     grid-template-columns: 3fr 1fr;
-    grid-template-rows: 3fr 2fr;
+    grid-template-rows: 1fr 5fr 3fr;
+}
+
+.ToolBar {
+    grid-area: toolBar;
+    text-align: center;
+    background-color: #f0f0f0;
 }
 
 .LiveWindow {
     grid-area: liveWindow;
     display: grid;
-    gap: 25px;
+    gap: 20px;
     height: 100%;
     width: 100%;
     grid-template-areas: "q1 q2 q3 q4 q5" "q6 q7 q8 q9 q10" "q11 q12 q13 q14 q15" "q16 q17 q18 q19 q20" "q21 q22 q23 q24 q25";

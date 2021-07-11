@@ -4,12 +4,18 @@ import MultiMenusList from "./constants.js";
 import "./ArchiveTable.css";
 import LogScreen from "./LogDisplay.js";
 import LiveScreen from "./LiveDisplay.js";
+import ToolBarScreen from "./ToolBar.js";
 
 export default class GridTest extends React.Component {
 
     render() {
         return (
             <div className='GridContainer'>
+                <div className='ToolBar'>
+                    <div className='ContentHolder'>
+                        <ToolBarScreen/>
+                    </div>
+                </div>
                 <div className='LiveWindow'>
                     <div className='q1'>
                         <LiveScreen segment={1}/>
