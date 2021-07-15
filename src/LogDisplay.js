@@ -198,6 +198,16 @@ export default class LogScreen extends React.Component {
     }
 
     componentDidMount() {
+        db.collection('events').get().then((snapshot) => {
+            const events = [];
+            snapshot.forEach((doc) => {
+                const data = doc.data();
+                events.push(data);
+            })
+            events.reverse();
+            this.setState({ events: events });
+        }).catch(error => console.error(error))
+
         this.interval = setInterval(() => {
             this.setState({ time: Date.now() });
             db.collection('events').get().then((snapshot) => {
