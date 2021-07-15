@@ -1,8 +1,11 @@
 import language from "./language.json";
+import React from 'react';
+import { db, auth } from "./firebase.js";
 
 import "./ArchiveTable.css";
+import { ThreeSixty } from "@material-ui/icons";
 
-const logs = [
+/*const logs = [
     {
         eventType:'arrive', //arrive, departure, fail (?)
         wagon:'1412-4325',
@@ -183,41 +186,75 @@ const logs = [
         wagon:'1478-9135',
         time:'00:00:00'
     }
-]
+]*/
 
-export default function LogScreen() {
-    return (
-        <div className='LogHolder'>
-            <div className='ContentHolder'>
-                {
-                    logs.map((log) => {
-                        switch(log.eventType) {
-                            case 'arrive':
-                                return (
-                                    <div className='LogElement'>[{log.time}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Arrived}</div>
-                                )
-                                break;
-                            case 'departure':
-                                return (
-                                    <div className='LogElement'>[{log.time}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Departured}</div>
-                                )
-                                break;
-                            case 'fail':
-                                return (
-                                    <div className='LogElementFail'>[{log.time}] {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
-                                )
-                                break;
-                            default:
-                                return (
-                                    <div className='LogElementFail'>[{log.time}] {language.LogScreen.Damaged}</div>
-                                )
-                                break;
-                        }
+export default class LogScreen extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            events: null,
+            time: Date.now()
+        }
+    }
 
-                        
-                    })
-                }
+    componentDidMount() {
+        this.interval = setInterval(() => {
+            this.setState({ time: Date.now() });
+            db.collection('events').get().then((snapshot) => {
+                const events = [];
+                snapshot.forEach((doc) => {
+                    const data = doc.data();
+                    events.push(data);
+                })
+                events.reverse();
+                this.setState({ events: events });
+            }).catch(error => console.error(error))
+        }, 1000);
+        
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+    
+    render() {
+        if(this.state.events) {
+        return (
+            <div className='LogHolder'>
+                <div className='ContentHolder'>
+                    {
+                        (this.state.events).map((log) => {
+                            switch(log.eventType) {
+                                case 'arrive':
+                                    return (
+                                        <div className='LogElement'>[{log.time}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Arrived}</div>
+                                    )
+                                    break;
+                                case 'departure':
+                                    return (
+                                        <div className='LogElement'>[{log.time}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Departured}</div>
+                                    )
+                                    break;
+                                case 'fail':
+                                    return (
+                                        <div className='LogElementFail'>[{log.time}] {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
+                                    )
+                                    break;
+                                default:
+                                    return (
+                                        <div className='LogElementFail'>[{log.time}] {language.LogScreen.Damaged}</div>
+                                    )
+                                    break;
+                            }
+
+                            
+                        })
+                    }
+                </div>
             </div>
-        </div>
-    )
+        )
+        } else {
+            return (<div></div>);
+        }
+    }
 }
