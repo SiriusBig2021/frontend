@@ -198,22 +198,48 @@ export default class LogScreen extends React.Component {
     }
 
     componentDidMount() {
-        db.collection('events').get().then((snapshot) => {
+        let _time = new Date();
+        let iso_date = (_time.toISOString()).split('T');
+        let shift_id = "";
+        let shift0_time = new Date(_time - new Date(Date.UTC(2021, 7, 11, 7, 30, 0)));
+        if(shift0_time.getHours() < 12) {
+            shift_id = iso_date[0] + '-07:30:00';
+        } else {
+            shift_id = iso_date[0] + '-19:30:00';
+        }
+
+        console.log('Current shift ID: ' + shift_id);
+
+        db.collection('shift/' + shift_id + '/events').get().then((snapshot) => {
             const events = [];
             snapshot.forEach((doc) => {
                 const data = doc.data();
+                data.id = doc.id;
                 events.push(data);
             })
             events.reverse();
             this.setState({ events: events });
+            console.log(this.state.events);
         }).catch(error => console.error(error))
 
         this.interval = setInterval(() => {
             this.setState({ time: Date.now() });
-            db.collection('events').get().then((snapshot) => {
+            
+            let _time = new Date();
+            let iso_date = (_time.toISOString()).split('T');
+            let shift_id = "";
+            let shift0_time = new Date(_time - new Date(Date.UTC(2021, 7, 11, 7, 30, 0)));
+            if(shift0_time.getHours() < 12) {
+                shift_id = iso_date[0] + '-07:30:00';
+            } else {
+                shift_id = iso_date[0] + '-19:30:00';
+            }
+
+            db.collection('shift/' + shift_id + '/events').get().then((snapshot) => {
                 const events = [];
                 snapshot.forEach((doc) => {
                     const data = doc.data();
+                    data.id = doc.id;
                     events.push(data);
                 })
                 events.reverse();
@@ -229,40 +255,40 @@ export default class LogScreen extends React.Component {
     
     render() {
         if(this.state.events) {
-        return (
-            <div className='LogHolder'>
-                <div className='ContentHolder'>
-                    {
-                        (this.state.events).map((log) => {
-                            switch(log.eventType) {
-                                case 'arrive':
-                                    return (
-                                        <div className='LogElement'>[{log.time}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Arrived}</div>
-                                    )
-                                    break;
-                                case 'departure':
-                                    return (
-                                        <div className='LogElement'>[{log.time}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Departured}</div>
-                                    )
-                                    break;
-                                case 'fail':
-                                    return (
-                                        <div className='LogElementFail'>[{log.time}] {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
-                                    )
-                                    break;
-                                default:
-                                    return (
-                                        <div className='LogElementFail'>[{log.time}] {language.LogScreen.Damaged}</div>
-                                    )
-                                    break;
-                            }
+            return (
+                <div className='LogHolder'>
+                    <div className='ContentHolder'>
+                        {
+                            (this.state.events).map((log) => {
+                                switch(log.type) {
+                                    case 'arrive':
+                                        return (
+                                            <div className='LogElement'>[{log.id}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Arrived}</div>
+                                        )
+                                        break;
+                                    case 'departure':
+                                        return (
+                                            <div className='LogElement'>[{log.time}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Departured}</div>
+                                        )
+                                        break;
+                                    case 'fail':
+                                        return (
+                                            <div className='LogElementFail'>[{log.time}] {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
+                                        )
+                                        break;
+                                    default:
+                                        return (
+                                            <div className='LogElementFail'>[{log.time}] {language.LogScreen.Damaged}</div>
+                                        )
+                                        break;
+                                }
 
-                            
-                        })
-                    }
+                                
+                            })
+                        }
+                    </div>
                 </div>
-            </div>
-        )
+            )
         } else {
             return (<div></div>);
         }
