@@ -4,8 +4,12 @@ import "./ArchiveTable.css";
 import React from 'react';
 import Modal from 'react-modal';
 import number_photo_example from './assets/images/number_photo_example.jpg';
+import MyMap from "./MyMap.js";
 
-const currentWagonList = [
+import { db, auth } from "./firebase";
+import { render } from "@testing-library/react";
+
+/*const currentWagonList = [
     {number: 13583243, state: 'full', time1: '00:00', time2: '00:00'},
     {number: 'повреждён', state: 'fail', time1: '00:00', time2: '00:00'},
     {number: 23235799, state: 'empty', time1: '00:00', time2: '00:00'},
@@ -13,12 +17,18 @@ const currentWagonList = [
     {number: 18451543, state: 'empty', time1: '00:00', time2: '00:00'},
     {number: 17685410, state: 'full', time1: '00:00', time2: '00:00'},
     {number: 68713543, state: 'empty', time1: '00:00', time2: '00:00'}
-]
+]*/
+
+/*const currentWagonList = [
+    {number: 'debug', state: 'full'}
+]*/
 
 export default function LiveScreen() {
     const [open, setOpen] = React.useState(false);
     const [inputNumber, setInputNumber] = React.useState("");
     const [inputState, setInputState] = React.useState("");
+
+    //console.log(arguments[0].wagons);
 
     const handleClick = () => {
         setOpen(!open);
@@ -44,13 +54,16 @@ export default function LiveScreen() {
     const updateInputState = event => {
         setInputState(event.target.value);
     }
-    
-    if(currentWagonList.length < arguments[0].segment) {
+
+    if(arguments[0].wagons) {
+    if(arguments[0].wagons.length < arguments[0].segment) {
         return (
-            <div className='LiveWagonEmptyWindow'></div>
+            <div className='LiveWagonEmptyWindow'>
+                
+            </div>
         );
     } else {
-        if(currentWagonList[arguments[0].segment-1].state === 'fail') {
+        if((arguments[0].wagons)[arguments[0].segment-1].state === 'fail') {
             return (
                 <div>
                     <Modal 
@@ -78,7 +91,7 @@ export default function LiveScreen() {
                         </div>
                     </Modal>
                     <div className='LiveWagonError'>
-                        {currentWagonList[arguments[0].segment-1].number}
+                        {(arguments[0].wagons)[arguments[0].segment-1].number}
                     </div>
                     <div className='LiveWagonErrorState'>
                         <div onClick={handleClick}>{language.LiveScreen.Fix}</div>
@@ -89,13 +102,16 @@ export default function LiveScreen() {
             return (
                 <div>
                     <div className='LiveWagonNumber'>
-                        {currentWagonList[arguments[0].segment-1].number}   
+                        {(arguments[0].wagons)[arguments[0].segment-1].number}   
                     </div>
                     <div className='LiveWagonState'>
-                        {currentWagonList[arguments[0].segment-1].state == "full" ? language.LiveScreen.FullState : (currentWagonList[arguments[0].segment-1].state == "empty" ? language.LiveScreen.EmptyState : language.LiveScreen.ErrorState)}
+                        {(arguments[0].wagons)[arguments[0].segment-1].state == "full" ? language.LiveScreen.FullState : ((arguments[0].wagons)[arguments[0].segment-1].state == "empty" ? language.LiveScreen.EmptyState : language.LiveScreen.ErrorState)}
                     </div>
                 </div>
             );
         }
+    }
+    } else {
+        return (<div></div>);
     }
 }

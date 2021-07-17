@@ -10,11 +10,11 @@ const firebaseConfig = {
     messagingSenderId: "64645880100",
     appId: "1:64645880100:web:09918e16405e15567bbbb1",
     measurementId: "G-QDG81H763E"
-  };
+};
 
-  firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-  export const auth = firebase.auth();
-  export const db = firebase.firestore();
+export const auth = firebase.auth();
+export const db = firebase.firestore();
 
-  export default firebase;
+export default firebase;

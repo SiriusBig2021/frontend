@@ -268,17 +268,17 @@ export default class LogScreen extends React.Component {
                                         break;
                                     case 'departure':
                                         return (
-                                            <div className='LogElement'>[{log.time}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Departured}</div>
+                                            <div className='LogElement'>[{log.id}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Departured}</div>
                                         )
                                         break;
                                     case 'fail':
                                         return (
-                                            <div className='LogElementFail'>[{log.time}] {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
+                                            <div className='LogElementFail'>[{log.id}] {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
                                         )
                                         break;
                                     default:
                                         return (
-                                            <div className='LogElementFail'>[{log.time}] {language.LogScreen.Damaged}</div>
+                                            <div className='LogElementFail'>[{log.id}] {language.LogScreen.Damaged}</div>
                                         )
                                         break;
                                 }

@@ -17,6 +17,13 @@
 
 .LiveWindow {
     grid-area: liveWindow;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.LiveWindow2 {
     display: grid;
     gap: 20px;
     height: 100%;
@@ -24,8 +31,6 @@
     grid-template-areas: "q1 q2 q3 q4 q5" "q6 q7 q8 q9 q10" "q11 q12 q13 q14 q15" "q16 q17 q18 q19 q20" "q21 q22 q23 q24 q25";
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    text-align: center;
-    background-color: #f0f0f0;
 }
 
 .ArchiveWindow {
