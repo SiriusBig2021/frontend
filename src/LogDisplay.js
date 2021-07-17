@@ -260,25 +260,36 @@ export default class LogScreen extends React.Component {
                     <div className='ContentHolder'>
                         {
                             (this.state.events).map((log) => {
+                                switch(log.state) {
+                                    case 'full':
+                                        log.state = language.LogScreen.Full;
+                                        break;
+                                    case 'empty':
+                                        log.state = language.LogScreen.Empty;
+                                        break;
+                                    default:
+                                        break;
+                                }
+
                                 switch(log.type) {
                                     case 'arrive':
                                         return (
-                                            <div className='LogElement'>[{log.id}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Arrived}</div>
+                                            <div className='LogElement'>[{log.id}] {log.state} {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Arrived}</div>
                                         )
                                         break;
                                     case 'departure':
                                         return (
-                                            <div className='LogElement'>[{log.id}] {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Departured}</div>
+                                            <div className='LogElement'>[{log.id}] {log.state} {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Departured}</div>
                                         )
                                         break;
                                     case 'fail':
                                         return (
-                                            <div className='LogElementFail'>[{log.id}] {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
+                                            <div className='LogElementFail'>[{log.id}] {log.state} {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
                                         )
                                         break;
                                     default:
                                         return (
-                                            <div className='LogElementFail'>[{log.id}] {language.LogScreen.Damaged}</div>
+                                            <div className='LogElementFail'>[{log.id}] {log.state} {language.LogScreen.Damaged}</div>
                                         )
                                         break;
                                 }
