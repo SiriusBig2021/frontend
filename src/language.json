@@ -27,7 +27,10 @@
         "Fix": "ИСПРАВИТЬ",
         "EmptyState": "Пустой",
         "FullState": "Полный",
-        "ErrorState": "Ошибка"
+        "ErrorState": "Ошибка",
+        "Wagon": "Вагон",
+        "ArrivedAt": "прибыл в",
+        "State": "состояние"
     },
     "ToolBar": {
         "TimeGone": "Время смены:",

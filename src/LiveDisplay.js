@@ -4,10 +4,8 @@ import "./ArchiveTable.css";
 import React from 'react';
 import Modal from 'react-modal';
 import number_photo_example from './assets/images/number_photo_example.jpg';
-import MyMap from "./MyMap.js";
 
 import { db, auth } from "./firebase";
-import { render } from "@testing-library/react";
 
 /*const currentWagonList = [
     {number: 13583243, state: 'full', time1: '00:00', time2: '00:00'},
@@ -19,12 +17,9 @@ import { render } from "@testing-library/react";
     {number: 68713543, state: 'empty', time1: '00:00', time2: '00:00'}
 ]*/
 
-/*const currentWagonList = [
-    {number: 'debug', state: 'full'}
-]*/
-
 export default function LiveScreen() {
     const [open, setOpen] = React.useState(false);
+    const [_open, _setOpen] = React.useState(false);
     const [inputNumber, setInputNumber] = React.useState("");
     const [inputState, setInputState] = React.useState("");
 
@@ -32,18 +27,22 @@ export default function LiveScreen() {
 
     const handleClick = () => {
         setOpen(!open);
-    }
-
-    const handleOpen = () => {
-        setOpen(true);
     };
+
+    const _handleClick = () => {
+        _setOpen(!_open);
+    }
 
     const handleClose = () => {
         setOpen(false);
     };
 
+    const _handleClose = () => {
+        _setOpen(false);
+    }
+
     const handleApplyClick = () => {
-        console.log("EDIT: Number is "+inputNumber + ", state is "+inputState);
+        console.log("EDIT: Number is " + inputNumber + ", state is "+inputState);
         setOpen(!open);
     };
 
@@ -101,10 +100,30 @@ export default function LiveScreen() {
         } else {
             return (
                 <div>
+                    <Modal
+                        isOpen={_open}
+                        contentLabel="Wagon info"
+                        className="Modal"
+                        overlayClassName="ModalOverlay"
+                        onRequestClose={_handleClose}
+                        shouldCloseOnOverlayClick={true}
+                    >
+                        <div className="ModalWagonInfoGridContainer">
+                            <div className="ModalWagonInfoImage1">
+                                <img src={(arguments[0].wagons)[arguments[0].segment-1].frames[0]} height="150px"/>
+                            </div>
+                            <div className="ModalWagonInfoImage2">
+                                <img src={(arguments[0].wagons)[arguments[0].segment-1].frames[1]} height="150px"/>
+                            </div>
+                            <div className="ModalWagonInfoTools">
+                                {language.LiveScreen.Wagon} {(arguments[0].wagons)[arguments[0].segment-1].number}: {language.LiveScreen.ArrivedAt} {(arguments[0].wagons)[arguments[0].segment-1].time1}, {language.LiveScreen.State}: {(arguments[0].wagons)[arguments[0].segment-1].state}
+                            </div>
+                        </div>
+                    </Modal>
                     <div className='LiveWagonNumber'>
                         {(arguments[0].wagons)[arguments[0].segment-1].number}   
                     </div>
-                    <div className='LiveWagonState'>
+                    <div className='LiveWagonState' onClick={_handleClick}>
                         {(arguments[0].wagons)[arguments[0].segment-1].state == "full" ? language.LiveScreen.FullState : ((arguments[0].wagons)[arguments[0].segment-1].state == "empty" ? language.LiveScreen.EmptyState : language.LiveScreen.ErrorState)}
                     </div>
                 </div>

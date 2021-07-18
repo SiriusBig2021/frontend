@@ -230,3 +230,39 @@
 .TimeItem {
     font-size: 17px;
 }
+
+.ModalWagonInfoGridContainer {
+    display: grid;
+    gap: 5px;
+    height: 100%;
+    width: 100%;
+    grid-template-areas: "imageArea1 imageArea2" "toolsArea toolsArea";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 3fr 1fr;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.ModalWagonInfoImage1 {
+    grid-area: imageArea1;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+    background-color: white;
+    padding-top: 25px;
+}
+
+.ModalWagonInfoImage2 {
+    grid-area: imageArea2;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+    background-color: white;
+    padding-top: 25px;
+}
+
+.ModalWagonInfoTools {
+    grid-area: toolsArea;
+    border: 1px solid #f0f0f0;
+    border-radius: 3px;
+    background-color: white;
+    padding-top: 20px;
+}

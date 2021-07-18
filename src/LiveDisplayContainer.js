@@ -3,11 +3,9 @@ import LiveScreen from "./LiveDisplay.js";
 import { db, auth } from './firebase.js';
 import "./ArchiveTable.css";
 import "./GridTest.css";
-import { LensTwoTone } from '@material-ui/icons';
 
 let currentWagonList = [{number: 'debug', state: 'fail'}];
 let wagonSet = new Set();
-let stateList = [];
 
 class EventSubscriber extends React.Component {
     constructor(props) {
@@ -36,6 +34,7 @@ class EventSubscriber extends React.Component {
             wagonSet.clear();
             snapshot.forEach((doc) => {
                 const data = doc.data();
+                data.id = doc.id;
                 if(wagonSet.has(data.wagon)) {
                     wagonSet.delete(data.wagon);
                 } else {
@@ -50,13 +49,17 @@ class EventSubscriber extends React.Component {
         currentWagonList = [];
         wagonSet.forEach((wagon) => {
             let wagonState = "";
+            let frames = [];
+            let time1 = "";
 
             for(let i = 0; i < this.state.events.length; i++) {
                 if(this.state.events[i].wagon === wagon) {
                     wagonState = this.state.events[i].state;
+                    frames = this.state.events[i].frames;
+                    time1 = this.state.events[i].id.split("T")[1];
                 }
             }
-            currentWagonList.push({number: wagon, state: wagonState});
+            currentWagonList.push({number: wagon, state: wagonState, frames: frames, time1: time1});
         })
 
         this.interval = setInterval(() => {
@@ -78,11 +81,11 @@ class EventSubscriber extends React.Component {
                 wagonSet.clear();
                 snapshot.forEach((doc) => {
                     const data = doc.data();
+                    data.id = doc.id;
                     if(wagonSet.has(data.wagon)) {
                         wagonSet.delete(data.wagon);
                     } else {
                         wagonSet.add(data.wagon);
-                        stateList.push(data.state);
                     }
                     events.push(data);
                 })
@@ -94,13 +97,17 @@ class EventSubscriber extends React.Component {
             currentWagonList = [];
             wagonSet.forEach((wagon) => {
                 let wagonState = "";
+                let frames = [];
+                let time1 = "";
 
                 for(let i = 0; i < this.state.events.length; i++) {
                     if(this.state.events[i].wagon === wagon) {
                         wagonState = this.state.events[i].state;
+                        frames = this.state.events[i].frames;
+                        time1 = this.state.events[i].id.split("T")[1];
                     }
                 }
-                currentWagonList.push({number: wagon, state: wagonState});
+                currentWagonList.push({number: wagon, state: wagonState, frames: frames, time1: time1});
             })
         }, 1000);
         
