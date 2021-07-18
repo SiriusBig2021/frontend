@@ -88,59 +88,6 @@ function generateMenus() {
     })
 
     _trainList.reverse();
-
-    //console.log("Train list:");
-    //console.log(_trainList);
-
-    /*const trainList = [
-        {time1: '00:00', time2: '00:00', time: '00:00', wagons: [
-            {number: 12222221, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 22222222, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 33333333, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 44444444, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 55555555, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 66666666, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 77777777, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 88888888, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 99999999, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 10000001, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 12222221, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 22222222, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 33333333, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 44444444, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 55555555, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 66666666, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 77777777, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 88888888, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 99999999, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 10000001, state: 'full', time1: '00:00', time2: '00:00'}
-            ]
-        },
-        {time1: '00:00', time2: '00:00', time: '00:00', wagons: [
-            {number: 12222221, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 22222222, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 33333333, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 44444444, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 55555555, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 66666666, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 77777777, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 88888888, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 99999999, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 10000001, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 12222221, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 22222222, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 33333333, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 44444444, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 55555555, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 66666666, state: 'full', time1: '00:00', time2: '00:00'},
-            {number: 77777777, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 88888888, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 99999999, state: 'empty', time1: '00:00', time2: '00:00'},
-            {number: 10000001, state: 'full', time1: '00:00', time2: '00:00'}
-            ]
-        }
-    ]*/
-
     const GeneratedMenus = [];
 
     if(_trainList) {
@@ -162,13 +109,10 @@ function generateMenus() {
         }
 
         TrainObject.label = language.ArchiveScreen.TrainLabel + ': ' + _trainList[i].length + ' ' + lang_cnt_ending;
-        //TrainObject.submenu[0] = {label: language.ArchiveScreen.TrainLabel};
         if(_trainList[i][0] != undefined) {
-            //TrainObject.submenu[0] = {label: language.ArchiveScreen.TrainLabel + _trainList[i][0].time1 + '-' + _trainList[i][0].time2};
             TrainObject.submenu[0] = {label: language.ArchiveScreen.ArrivedAt + _trainList[i][0].time1};
             TrainObject.submenu[1] = {label: language.ArchiveScreen.DeparturedAt + _trainList[i][0].time2};
         }
-        //console.log(_trainList[i]);
 
         for(let j = 0; j < _trainList[i].length; j++) {
             let WagonObject = {

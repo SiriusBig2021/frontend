@@ -19,7 +19,7 @@ class EventSubscriber extends React.Component {
     }
 
     componentDidMount() {
-        console.log("EventSubscriber in LiveWindow has been mounted.");
+        //console.log("EventSubscriber in LiveWindow has been mounted.");
         let _time = new Date();
         let iso_date = (_time.toISOString()).split('T');
         let shift_id = "";
