@@ -5,7 +5,10 @@
         "ArrivedAt": "Прибыл в ",
         "DeparturedAt": "Ушёл в ",
         "Full": "Полный",
-        "Empty": "Пустой"
+        "Empty": "Пустой",
+        "Wagons1": "вагон",
+        "Wagons234": "вагона",
+        "Wagons50": "вагонов"
     },
     "LogScreen": {
         "Wagon": "вагон",

@@ -203,9 +203,9 @@ export default class LogScreen extends React.Component {
         let shift_id = "";
         let shift0_time = new Date(_time - new Date(Date.UTC(2021, 7, 11, 7, 30, 0)));
         if(shift0_time.getHours() < 12) {
-            shift_id = iso_date[0] + '-07:30:00';
+            shift_id = iso_date[0] + 'T07:30:00';
         } else {
-            shift_id = iso_date[0] + '-19:30:00';
+            shift_id = iso_date[0] + 'T19:30:00';
         }
 
         console.log('Current shift ID: ' + shift_id);
@@ -230,9 +230,9 @@ export default class LogScreen extends React.Component {
             let shift_id = "";
             let shift0_time = new Date(_time - new Date(Date.UTC(2021, 7, 11, 7, 30, 0)));
             if(shift0_time.getHours() < 12) {
-                shift_id = iso_date[0] + '-07:30:00';
+                shift_id = iso_date[0] + 'T07:30:00';
             } else {
-                shift_id = iso_date[0] + '-19:30:00';
+                shift_id = iso_date[0] + 'T19:30:00';
             }
 
             db.collection('shift/' + shift_id + '/events').get().then((snapshot) => {

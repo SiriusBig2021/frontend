@@ -35,7 +35,6 @@ const Item = styled.div`
 const Label = styled.span`
   width: 100%;
   display: block;
-  cursor: pointer;
 `;
 const Arrow = styled.span`
   display: flex;
@@ -62,7 +61,7 @@ const MultiMenus = ({ menus }) => {
   const [activeMenus, setActiveMenus] = useState([]);
 
   const handleMenuClick = data => {
-    console.log(data);
+    //console.log(data);
   };
 
   const handleArrowClick = menuName => {
@@ -83,7 +82,7 @@ const MultiMenus = ({ menus }) => {
   const ListMenu = ({ dept, data, hasSubMenu, menuName, menuIndex }) => (
     <LI>
       <Item dept={dept}>
-        <Label onClick={() => handleMenuClick(data)} className={(data.label == language.ArchiveScreen.Full ? 'FullItem' : (data.label == language.ArchiveScreen.Empty ? 'EmptyItem' : 'ContentItem'))} >{data.label} </Label>
+        <Label onClick={() => handleMenuClick(data)} className={(data.label == language.ArchiveScreen.Full ? 'FullItem' : (data.label == language.ArchiveScreen.Empty ? 'EmptyItem' : (data.label.split(" ")[0] == language.ArchiveScreen.ArrivedAt.split(" ")[0] || data.label.split(" ")[0] == language.ArchiveScreen.DeparturedAt.split(" ")[0] ? 'TimeItem' : 'ContentItem')))} >{data.label} </Label>
         {hasSubMenu && (
           <Arrow
             onClick={() => handleArrowClick(menuName)}
