@@ -70,7 +70,7 @@ const menus = [
 let _events = [];
 
 function generateMenus() {
-    let _trainList = [[], []];
+    let _trainList = [[]];
     _events.forEach((event) => {
         let time1;
         if(event.type === 'departure') {
@@ -81,6 +81,7 @@ function generateMenus() {
             })
             if(event.train_id != undefined) {
                 if(event.train_id == -1) {} else {
+                    if(event.train_id > _trainList.length) {_trainList.push([]);}
                     _trainList[event.train_id-1].push({number: event.wagon, state: event.state, time1: time1, time2: (event.id.split("T"))[1]});
                 }
             }
