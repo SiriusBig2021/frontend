@@ -109,7 +109,7 @@ class EventSubscriber extends React.Component {
                 }
                 currentWagonList.push({number: wagon, state: wagonState, frames: frames, time1: time1});
             })
-        }, 1000);
+        }, 2000);
         
     }
 

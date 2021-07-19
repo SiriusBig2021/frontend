@@ -70,7 +70,7 @@ const menus = [
 let _events = [];
 
 function generateMenus() {
-    let _trainList = [[]];
+    let _trainList = [];
     _events.forEach((event) => {
         let time1;
         if(event.type === 'departure') {

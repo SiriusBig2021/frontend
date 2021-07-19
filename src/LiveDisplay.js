@@ -5,8 +5,6 @@ import React from 'react';
 import Modal from 'react-modal';
 import number_photo_example from './assets/images/number_photo_example.jpg';
 
-import { db, auth } from "./firebase";
-
 /*const currentWagonList = [
     {number: 13583243, state: 'full', time1: '00:00', time2: '00:00'},
     {number: 'повреждён', state: 'fail', time1: '00:00', time2: '00:00'},

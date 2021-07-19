@@ -61,7 +61,7 @@ export default class LogScreen extends React.Component {
                 events.reverse();
                 this.setState({ events: events });
             }).catch(error => console.error(error))
-        }, 1000);
+        }, 5000);
         
     }
 
