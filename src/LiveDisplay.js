@@ -114,7 +114,7 @@ export default function LiveScreen() {
                                 <img src={(arguments[0].wagons)[arguments[0].segment-1].frames[1]} height="150px"/>
                             </div>
                             <div className="ModalWagonInfoTools">
-                                {language.LiveScreen.Wagon} {(arguments[0].wagons)[arguments[0].segment-1].number}: {language.LiveScreen.ArrivedAt} {(arguments[0].wagons)[arguments[0].segment-1].time1}, {language.LiveScreen.State}: {(arguments[0].wagons)[arguments[0].segment-1].state}
+                                {language.LiveScreen.Wagon} {(arguments[0].wagons)[arguments[0].segment-1].number}: {language.LiveScreen.ArrivedAt} {(arguments[0].wagons)[arguments[0].segment-1].time1}, {language.LiveScreen.State}: {(arguments[0].wagons)[arguments[0].segment-1].state == 'full' ? language.LiveScreen.FullState : language.LiveScreen.EmptyState}
                             </div>
                         </div>
                     </Modal>
