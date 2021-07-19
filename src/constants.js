@@ -199,7 +199,7 @@ export default class MultiMenusList extends React.Component {
                 _events = this.state.events;
             }).catch(error => console.error(error))
 
-        }, 1000);
+        }, 5000);
     }
 
     componentWillUnmount() {

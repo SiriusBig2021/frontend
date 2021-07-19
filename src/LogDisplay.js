@@ -90,22 +90,22 @@ export default class LogScreen extends React.Component {
                                 switch(log.type) {
                                     case 'arrive':
                                         return (
-                                            <div className='LogElement'>[{log.id}] {log.state} {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Arrived}</div>
+                                            <div className='LogElement'>[{log.id.split("T")[1]}] {log.state} {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Arrived}</div>
                                         )
                                         break;
                                     case 'departure':
                                         return (
-                                            <div className='LogElement'>[{log.id}] {log.state} {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Departured}</div>
+                                            <div className='LogElement'>[{log.id.split("T")[1]}] {log.state} {language.LogScreen.Wagon} {log.wagon} {language.LogScreen.Departured}</div>
                                         )
                                         break;
                                     case 'fail':
                                         return (
-                                            <div className='LogElementFail'>[{log.id}] {log.state} {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
+                                            <div className='LogElementFail'>[{log.id.split("T")[1]}] {log.state} {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
                                         )
                                         break;
                                     default:
                                         return (
-                                            <div className='LogElementFail'>[{log.id}] {log.state} {language.LogScreen.Damaged}</div>
+                                            <div className='LogElementFail'>[{log.id.split("T")[1]}] {log.state} {language.LogScreen.Damaged}</div>
                                         )
                                         break;
                                 }

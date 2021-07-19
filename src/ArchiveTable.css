@@ -70,6 +70,7 @@
 
 .LiveWagonState {
     color: #787878;
+    cursor: pointer;
 }
 
 .LiveWagonEmptyWindow {
