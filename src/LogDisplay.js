@@ -35,7 +35,6 @@ export default class LogScreen extends React.Component {
             })
             events.reverse();
             this.setState({ events: events });
-            //console.log(this.state.events);
         }).catch(error => console.error(error))
 
         this.interval = setInterval(() => {
@@ -62,7 +61,6 @@ export default class LogScreen extends React.Component {
                 this.setState({ events: events });
             }).catch(error => console.error(error))
         }, 5000);
-        
     }
 
     componentWillUnmount() {
@@ -105,7 +103,7 @@ export default class LogScreen extends React.Component {
                                         break;
                                     default:
                                         return (
-                                            <div className='LogElementFail'>[{log.id.split("T")[1]}] {log.state} {language.LogScreen.Damaged}</div>
+                                            <div className='LogElementFail'>[{log.id.split("T")[1]}] {language.LogScreen.Damaged}</div>
                                         )
                                         break;
                                 }

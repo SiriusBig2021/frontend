@@ -13,11 +13,13 @@ export default class LiveDisplayContainer extends React.Component {
         this.state = {
             time: Date.now(),
             events: null,
-            wagons: null
+            wagons: null,
+            reload: false
         }
     }
 
     componentDidMount() {
+        //this.setState({ time: Date.now() });
         console.log("mounted");
 
         let _time = new Date();
@@ -45,26 +47,25 @@ export default class LiveDisplayContainer extends React.Component {
                 events.push(data);
             })
             events.reverse();
-            this.setState({ events: events });
+            this.setState({ events: events }, () => {
+                currentWagonList = [];
+                wagonSet.forEach((wagon) => {
+                    let wagonState = "";
+                    let frames = [];
+                    let time1 = "";
+
+                    for(let i = 0; i < this.state.events.length; i++) {
+                        if(this.state.events[i].wagon === wagon) {
+                            wagonState = this.state.events[i].state;
+                            frames = this.state.events[i].frames;
+                            time1 = this.state.events[i].id.split("T")[1];
+                        }
+                    }
+                    currentWagonList.push({number: wagon, state: wagonState, frames: frames, time1: time1});
+                })
+                this.setState({ wagons: currentWagonList });
+            });
         }).catch(error => console.error(error))
-
-        currentWagonList = [];
-        wagonSet.forEach((wagon) => {
-            let wagonState = "";
-            let frames = [];
-            let time1 = "";
-
-            for(let i = 0; i < this.state.events.length; i++) {
-                if(this.state.events[i].wagon === wagon) {
-                    wagonState = this.state.events[i].state;
-                    frames = this.state.events[i].frames;
-                    time1 = this.state.events[i].id.split("T")[1];
-                }
-            }
-            currentWagonList.push({number: wagon, state: wagonState, frames: frames, time1: time1});
-        })
-
-        this.setState({ wagons: currentWagonList });
 
         this.intervalID = setInterval(() => {
             this.setState({ time: Date.now() });
@@ -127,6 +128,7 @@ export default class LiveDisplayContainer extends React.Component {
     }
 
     render() {
+        //console.log(this.state.wagons);
         if(this.state.wagons) {
         return (
             <div className="LiveWindow2">

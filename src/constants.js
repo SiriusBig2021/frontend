@@ -151,7 +151,6 @@ export default class MultiMenusList extends React.Component {
     }
 
     componentDidMount() {
-
         let _time = new Date();
         let iso_date = (_time.toISOString()).split('T');
         let shift_id = "";
@@ -170,8 +169,9 @@ export default class MultiMenusList extends React.Component {
                 events.push(data);
             })
             events.reverse();
-            this.setState({ events: events });
-            _events = this.state.events;
+            this.setState({ events: events }, () => {
+                _events = this.state.events;
+            });
         }).catch(error => console.error(error))
 
         this.intervalID = setInterval(() => {
@@ -195,8 +195,9 @@ export default class MultiMenusList extends React.Component {
                     events.push(data);
                 })
                 events.reverse();
-                this.setState({ events: events });
-                _events = this.state.events;
+                this.setState({ events: events }, () => {
+                    _events = this.state.events;
+                });
             }).catch(error => console.error(error))
 
         }, 5000);
