@@ -267,3 +267,7 @@
     background-color: white;
     padding-top: 20px;
 }
+
+.WagonInfoImageComponent {
+    height: 17vh;
+}

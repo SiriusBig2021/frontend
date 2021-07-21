@@ -25,7 +25,8 @@
 
 .LiveWindow2 {
     display: grid;
-    gap: 20px;
+    padding: 10px;
+    gap: 15px;
     height: 100%;
     max-height: 55vh;
     width: 100%;
