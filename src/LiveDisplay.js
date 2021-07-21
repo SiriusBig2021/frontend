@@ -101,8 +101,8 @@ export default function LiveScreen() {
                     <Modal
                         isOpen={_open}
                         contentLabel="Wagon info"
-                        className="Modal"
-                        overlayClassName="ModalOverlay"
+                        className="InfoModal"
+                        overlayClassName="InfoModalOverlay"
                         onRequestClose={_handleClose}
                         shouldCloseOnOverlayClick={true}
                     >
