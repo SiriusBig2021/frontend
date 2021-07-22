@@ -215,6 +215,10 @@ export default class ToolBarScreen extends React.Component {
         return (
             <div className='ToolBarHolder'>
                 <div className="LogoImageHolder"><img src={logo} className='LogoImage'/></div>
+                <div className="ClientInfoHolder">
+                    <div className="ToolBarClientName">{language.ToolBar.Dispatcher}: Иван Иванов</div>
+                    <div className="ToolBarClientInfoStatus">{language.ToolBar.LoadArea}: 75 {language.ToolBar.Route}</div>
+                </div>
                 <div className="WagonStateInfoHolder">
                     <div className="ToolBarEmptyWagonStatus">{language.ToolBar.EmptyWagonsOnStation}: {this.state.wagons_empty}</div>
                     <div className="ToolBarFullWagonStatus">{language.ToolBar.FullWagonsOnStation}: {this.state.wagons_full}</div>

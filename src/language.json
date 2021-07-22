@@ -41,6 +41,9 @@
         "TimeGone": "Время смены:",
         "WagonsGone": "Вагонов загружено:",
         "EmptyWagonsOnStation": "Порожних вагонов на станции",
-        "FullWagonsOnStation": "Полных вагонов на станции"
+        "FullWagonsOnStation": "Полных вагонов на станции",
+        "LoadArea": "Участок погрузки",
+        "Route": "путь",
+        "Dispatcher": "Диспетчер"
     }
 }
