@@ -90,11 +90,14 @@ function generateMenus() {
             }
         } else {
             if(event.train_id != undefined && event.train_id != -1) {
-                //if(event.train_id > _trainList.length) {_trainList.push([]);}
                 while(event.train_id > _trainList.length) {_trainList.push([]);}
                 _trainList[event.train_id-1].push({number: event.wagon, state: event.state, time1: event.id.split("T")[1], time2: '00:00:00', type: event.type});
             }
         }
+    })
+
+    _trainList.forEach((train) => {
+        train.reverse();
     })
 
     if(currentWagonList) {
@@ -134,12 +137,11 @@ function generateMenus() {
             } else {
                 TrainObject.label = '[' + _trainList[i][0].time2 + '] ' + language.ArchiveScreen.TrainDepartureLabel + ': ' + _trainList[i].length + ' ' + lang_cnt_ending;
             }
-            //TrainObject.label = '[' + (_trainList) + '] ' + (_trainList[i][0].type == 'arrive' ? language.ArchiveScreen.TrainArriveLabel : language.ArchiveScreen.TrainDepartureLabel) + ': ' + _trainList[i].length + ' ' + lang_cnt_ending;
         }
 
-        if(_trainList[i][0] != undefined && i != 0) {
+        /*if(_trainList[i][0] != undefined && i != 0) {
             if(_trainList[i][0].type == 'arrive') {TrainObject.submenu[0] = {label: language.ArchiveScreen.TrainArrivedAt + _trainList[i][0].time1};} else {TrainObject.submenu[1] = {label: language.ArchiveScreen.TrainDeparturedAt + _trainList[i][0].time2};}
-        }
+        }*/
 
         for(let j = 0; j < _trainList[i].length; j++) {
             let WagonObject = {
@@ -149,7 +151,12 @@ function generateMenus() {
 
             WagonObject.label = _trainList[i][j].number;
             WagonObject.submenu[1] = {label: language.ArchiveScreen.ArrivedAt + _trainList[i][j].time1};
-            if(i != 0 && _trainList[i][j].type == 'departure') {WagonObject.submenu[2] = {label: language.ArchiveScreen.DeparturedAt + _trainList[i][j].time2};}
+            if(i != 0 && _trainList[i][j].type == 'departure') {
+                let _loadTime = new Date(new Date('2010-10-10T'+_trainList[i][j].time1+'Z') - new Date('2010-10-10T'+_trainList[i][j].time2+'Z'));
+
+                WagonObject.submenu[2] = {label: language.ArchiveScreen.DeparturedAt + _trainList[i][j].time2};
+                WagonObject.submenu[3] = {label: language.ArchiveScreen.LoadTime + ' ' + _loadTime.toUTCString().split(" ")[4]};
+            }
 
             if(_trainList[i][j].state == 'empty') {
                 WagonObject.submenu[0] = {label: language.ArchiveScreen.Empty + ""};

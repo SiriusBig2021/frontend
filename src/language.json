@@ -13,7 +13,8 @@
         "Wagons1": "вагон",
         "Wagons234": "вагона",
         "Wagons50": "вагонов",
-        "CurrentlyUnderLoading": "Сейчас в погрузке"
+        "CurrentlyUnderLoading": "Сейчас в погрузке",
+        "LoadTime": "Находился в погрузке"
     },
     "LogScreen": {
         "Wagon": "вагон",
