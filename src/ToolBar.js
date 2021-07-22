@@ -82,7 +82,7 @@ export default class ToolBarScreen extends React.Component {
 
         return (
             <div className='ToolBarHolder'>
-                <img src={logo} className='LogoImage' height="80"/>
+                <img src={logo} className='LogoImage'/>
                 <div className='ToolBarTimeStatus'>
                     <div>{language.ToolBar.TimeGone} {_time.toLocaleTimeString()}</div>
                 </div>

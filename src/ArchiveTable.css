@@ -236,6 +236,7 @@
 .LogoImage {
     position: absolute;
     left: 0.5vw;
+    max-height: 8vh;
     padding-top: 0.9vh;
 }
 
@@ -297,4 +298,13 @@
 
 .WagonInfoImageComponent {
     height: 17vh;
+}
+
+.FullWagonLiveComponent {
+    background-color: #bbbbbb;
+    height: 100%;
+}
+
+.EmptyWagonLiveComponent {
+    background-color: #d3d3d3;
 }

@@ -57,6 +57,7 @@ export default class LiveDisplayContainer extends React.Component {
                     for(let i = 0; i < this.state.events.length; i++) {
                         if(this.state.events[i].wagon === wagon) {
                             wagonState = this.state.events[i].state;
+                            if(this.state.events[i].type == 'fail') {wagonState = 'fail';}
                             frames = this.state.events[i].frames;
                             time1 = this.state.events[i].id.split("T")[1];
                         }
@@ -107,6 +108,7 @@ export default class LiveDisplayContainer extends React.Component {
                 for(let i = 0; i < this.state.events.length; i++) {
                     if(this.state.events[i].wagon === wagon) {
                         wagonState = this.state.events[i].state;
+                        if(this.state.events[i].type == 'fail') {wagonState = 'fail';}  
                         frames = this.state.events[i].frames;
                         time1 = this.state.events[i].id.split("T")[1];
                     }
@@ -128,7 +130,6 @@ export default class LiveDisplayContainer extends React.Component {
     }
 
     render() {
-        //console.log(this.state.wagons);
         if(this.state.wagons) {
         return (
             <div className="LiveWindow2">

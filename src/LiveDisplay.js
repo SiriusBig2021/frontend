@@ -21,8 +21,6 @@ export default function LiveScreen() {
     const [inputNumber, setInputNumber] = React.useState("");
     const [inputState, setInputState] = React.useState("");
 
-    //console.log(arguments[0].wagons);
-
     const handleClick = () => {
         setOpen(!open);
     };
@@ -40,7 +38,7 @@ export default function LiveScreen() {
     }
 
     const handleApplyClick = () => {
-        console.log("EDIT: Number is " + inputNumber + ", state is "+inputState);
+        console.log("EDIT: Number is " + inputNumber + ", state is " + inputState);
         setOpen(!open);
     };
 
@@ -54,15 +52,11 @@ export default function LiveScreen() {
 
     if(arguments[0].wagons) {
     if(arguments[0].wagons.length < arguments[0].segment) {
-        return (
-            <div className='LiveWagonEmptyWindow'>
-                
-            </div>
-        );
+        return (<div className='LiveWagonEmptyWindow'></div>);
     } else {
-        if((arguments[0].wagons)[arguments[0].segment-1].state === 'fail') {
+        if((arguments[0].wagons)[arguments[0].segment-1].state == 'fail') {
             return (
-                <div>
+                <div className="WagonErrorLiveComponent">
                     <Modal 
                         isOpen={open}
                         contentLabel="Fix a problem with a wagon"
@@ -97,7 +91,7 @@ export default function LiveScreen() {
             );
         } else {
             return (
-                <div>
+                <div className={(arguments[0].wagons)[arguments[0].segment-1].state == 'full' ? "FullWagonLiveComponent" : ((arguments[0].wagons)[arguments[0].segment-1].state == 'empty' ? 'EmptyWagonLiveComponent' : 'WagonLiveComponent')}>
                     <Modal
                         isOpen={_open}
                         contentLabel="Wagon info"
