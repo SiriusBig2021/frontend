@@ -9,10 +9,26 @@
     grid-template-rows: 1fr 6fr 3fr;
 }
 
+.GridContainerWithHiddenLogs {
+    display: grid;
+    background-color: #000;
+    gap: 5px;
+    height: 100vh;
+    width: 100vw;
+    grid-template-areas: "toolBar toolBar" "liveWindow archiveWindow";
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: 1fr 9fr;
+}
+
 .ToolBar {
     grid-area: toolBar;
     text-align: center;
     background-color: #f0f0f0;
+}
+
+.HiddenLogWindow {
+    visibility:collapse;
+    position: absolute;
 }
 
 .LiveWindow {
@@ -221,6 +237,34 @@
     border: 2px solid #787878;
     border-radius: 9px;
     visibility: visible;
+}
+
+.HideLogsButton {
+    position: absolute;
+    right: 25.1vw;
+    bottom: 30.0vh;
+    font-size: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid #000;
+    background-color: #d3d3d3;
+    border-top-left-radius: 13px;
+    cursor: pointer;
+}
+
+.ShowLogsButton {
+    position: absolute;
+    right: 25.1vw;
+    bottom:0.0vh;
+    font-size: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 2px solid #000;
+    background-color: #d3d3d3;
+    border-top-left-radius: 13px;
+    cursor: pointer;
 }
 
 * {

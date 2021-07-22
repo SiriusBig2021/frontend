@@ -6,30 +6,34 @@ import LogScreen from "./LogDisplay.js";
 import ToolBarScreen from "./ToolBar.js";
 import LiveDisplayContainer from "./LiveDisplayContainer";
 
-export default class GridTest extends React.Component {
+export default function GridTest() {
+    const [logsOpen, setLogsState] = React.useState(false);
 
-    render() {
-        return (
-            <div className='GridContainer'>
-                <div className='ToolBar'>
-                    <div className='ContentHolder'>
-                        <ToolBarScreen/>
-                    </div>
-                </div>
-                <div className='LiveWindow'>
-                    <LiveDisplayContainer/>
-                </div>
-                <div className='ArchiveWindow'>
-                    <div className='ContentHolder'>
-                        <MultiMenusList/>
-                    </div>
-                </div>
-                <div className='LogWindow'>
-                    <div className='ContentHolder'>
-                        <LogScreen/>
-                    </div>
+    const handleClick = () => {
+        setLogsState(!logsOpen);
+    }
+
+    return (
+        <div className={logsOpen ? 'GridContainer' : 'GridContainerWithHiddenLogs'}>
+            <div className='ToolBar'>
+                <div className='ContentHolder'>
+                    <ToolBarScreen/>
                 </div>
             </div>
-        )
-    }
+            <div className='LiveWindow'>
+                <button className={logsOpen ? 'HideLogsButton' : 'ShowLogsButton'} onClick={handleClick}>{logsOpen ? '▾ Hide logs' : '▴ Show logs'}</button>
+                <LiveDisplayContainer/>
+            </div>
+            <div className='ArchiveWindow'>
+                <div className='ContentHolder'>
+                    <MultiMenusList/>
+                </div>
+            </div>
+            <div className={logsOpen ? 'LogWindow' : 'HiddenLogWindow'}>
+                <div className='ContentHolder'>
+                    <LogScreen/>
+                </div>
+            </div>
+        </div>
+    )
 }   

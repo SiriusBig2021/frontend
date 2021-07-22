@@ -186,8 +186,6 @@ export default class MultiMenusList extends React.Component {
     }
 
     componentDidMount() {
-        //console.log("mounted");
-
         let _time = new Date();
         let iso_date = (_time.toISOString()).split('T');
         let shift_id = "";
