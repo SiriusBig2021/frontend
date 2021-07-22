@@ -9,7 +9,7 @@ const complexMixin = css`
 `;
 
 const fontsize = {
-  H3FONTSIZE: '25px', //Размер шрифта списка
+  H3FONTSIZE: '23px', //Размер шрифта списка
 }
 
 const fontsize2 = {
@@ -82,7 +82,7 @@ const MultiMenus = ({ menus }) => {
   const ListMenu = ({ dept, data, hasSubMenu, menuName, menuIndex }) => (
     <LI>
       <Item dept={dept}>
-        <Label onClick={() => handleMenuClick(data)} className={(data.label == language.ArchiveScreen.Full ? 'FullItem' : (data.label == language.ArchiveScreen.Empty ? 'EmptyItem' : (data.label.split(" ")[0] == language.ArchiveScreen.ArrivedAt.split(" ")[0] || data.label.split(" ")[0] == language.ArchiveScreen.DeparturedAt.split(" ")[0] ? 'TimeItem' : 'ContentItem')))} >{data.label} </Label>
+        <Label onClick={() => handleMenuClick(data)} className={(data.label == language.ArchiveScreen.Full ? 'FullItem' : (data.label == language.ArchiveScreen.Empty ? 'EmptyItem' : (data.label.split(" ")[0] == language.ArchiveScreen.TrainArrivedAt.split(" ")[0] || data.label.split(" ")[0] == language.ArchiveScreen.TrainDeparturedAt.split(" ")[0] ? 'TimeItem' : (data.label.split(" ")[0] == language.ArchiveScreen.CurrentlyUnderLoading.split(" ")[0] ? 'CurrentlyOnStationItem' : 'ContentItem'))))} >{data.label} </Label>
         {hasSubMenu && (
           <Arrow
             onClick={() => handleArrowClick(menuName)}

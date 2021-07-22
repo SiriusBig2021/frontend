@@ -1,14 +1,19 @@
 {
     "ArchiveScreen": {
-        "TrainLabel": "Поезд ",
+        "TrainLabel": "Группа",
+        "TrainArriveLabel": "Подана группа",
+        "TrainDepartureLabel": "Убрана группа",
         "TotalTime": "Время загрузки: ",
-        "ArrivedAt": "Прибыл в ",
-        "DeparturedAt": "Ушёл в ",
+        "ArrivedAt": "Подан в ",
+        "DeparturedAt": "Убран в ",
+        "TrainArrivedAt": "Группа подана в ",
+        "TrainDeparturedAt": "Группа убрана в ",
         "Full": "Полный",
         "Empty": "Пустой",
         "Wagons1": "вагон",
         "Wagons234": "вагона",
-        "Wagons50": "вагонов"
+        "Wagons50": "вагонов",
+        "CurrentlyUnderLoading": "Сейчас в погрузке"
     },
     "LogScreen": {
         "Wagon": "вагон",

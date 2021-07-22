@@ -19,7 +19,6 @@ export default class LiveDisplayContainer extends React.Component {
     }
 
     componentDidMount() {
-        //this.setState({ time: Date.now() });
         console.log("mounted");
 
         let _time = new Date();
@@ -64,6 +63,8 @@ export default class LiveDisplayContainer extends React.Component {
                     }
                     currentWagonList.push({number: wagon, state: wagonState, frames: frames, time1: time1});
                 })
+
+                currentWagonList.reverse();
                 this.setState({ wagons: currentWagonList });
             });
         }).catch(error => console.error(error))
@@ -116,6 +117,7 @@ export default class LiveDisplayContainer extends React.Component {
                 currentWagonList.push({number: wagon, state: wagonState, frames: frames, time1: time1});
             })
 
+            currentWagonList.reverse();
             this.setState({ wagons: currentWagonList });
         }, 5000);
     }

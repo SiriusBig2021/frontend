@@ -308,3 +308,7 @@
 .EmptyWagonLiveComponent {
     background-color: #d3d3d3;
 }
+
+.CurrentlyOnStationItem {
+    color: #059a00;
+}
