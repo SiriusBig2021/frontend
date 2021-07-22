@@ -9,7 +9,7 @@
         "TrainArrivedAt": "Группа подана в ",
         "TrainDeparturedAt": "Группа убрана в ",
         "Full": "Полный",
-        "Empty": "Пустой",
+        "Empty": "Порожний",
         "Wagons1": "вагон",
         "Wagons234": "вагона",
         "Wagons50": "вагонов",
@@ -22,7 +22,7 @@
         "Failed": "ОШИБКА. Нажмите для получения информации",
         "Damaged": "ЛОГ ПОВРЕЖДЁН",
         "Full": "Полный",
-        "Empty": "Пустой"
+        "Empty": "Порожний"
     },
     "LiveScreen": {
         "WagonsNumber": "Номер вагона:",
@@ -30,7 +30,7 @@
         "CloseButton": "Закрыть",
         "ApplyButton": "Применить",
         "Fix": "ИСПРАВИТЬ",
-        "EmptyState": "Пустой",
+        "EmptyState": "Порожний",
         "FullState": "Полный",
         "ErrorState": "Ошибка",
         "Wagon": "Вагон",
