@@ -231,6 +231,22 @@
     max-height: 100%;
     width: 100%;
     max-width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "toolbarImageArea toolbarWagonStateInfoArea toolbarWagonInfoArea";
+}
+
+.LogoImageHolder {
+    grid-area: toolbarImageArea;
+}
+
+.WagonInfoHolder {
+    grid-area: toolbarWagonInfoArea;
+}
+
+.WagonStateInfoHolder {
+    grid-area: toolbarWagonStateInfoArea;
 }
 
 .LogoImage {
@@ -311,4 +327,20 @@
 
 .CurrentlyOnStationItem {
     color: #059a00;
+}
+
+.ToolBarEmptyWagonStatus {
+    position: absolute;
+    right: 26vw;
+    color: #000;
+    font-size: 24px;
+    padding-top: 1.5vh;
+}
+
+.ToolBarFullWagonStatus {
+    position: absolute;
+    right: 26vw;
+    color: #000;
+    font-size: 24px;
+    padding-top: 5vh;
 }

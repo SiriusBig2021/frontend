@@ -39,6 +39,8 @@
     },
     "ToolBar": {
         "TimeGone": "Время смены:",
-        "WagonsGone": "Вагонов загружено:"
+        "WagonsGone": "Вагонов загружено:",
+        "EmptyWagonsOnStation": "Порожних вагонов на станции",
+        "FullWagonsOnStation": "Полных вагонов на станции"
     }
 }
