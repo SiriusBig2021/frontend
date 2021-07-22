@@ -6,6 +6,8 @@ import LogScreen from "./LogDisplay.js";
 import ToolBarScreen from "./ToolBar.js";
 import LiveDisplayContainer from "./LiveDisplayContainer";
 
+import language from "./language.json";
+
 export default function GridTest() {
     const [logsOpen, setLogsState] = React.useState(false);
 
@@ -21,7 +23,7 @@ export default function GridTest() {
                 </div>
             </div>
             <div className='LiveWindow'>
-                <button className={logsOpen ? 'HideLogsButton' : 'ShowLogsButton'} onClick={handleClick}>{logsOpen ? '▾ Hide logs' : '▴ Show logs'}</button>
+                <button className={logsOpen ? 'HideLogsButton' : 'ShowLogsButton'} onClick={handleClick}>{logsOpen ? '▾ '+language.LogScreen.HideLogs : '▴ '+language.LogScreen.ShowLogs}</button>
                 <LiveDisplayContainer/>
             </div>
             <div className='ArchiveWindow'>
