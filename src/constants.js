@@ -73,7 +73,6 @@ let wagonSet = new Set();
 
 function generateMenus() {
     let _trainList = [];
-    //let _trainTypeList = [];
     _events.forEach((event) => {
         let time1;
         if(event.type == 'departure') {
@@ -152,7 +151,7 @@ function generateMenus() {
             WagonObject.label = _trainList[i][j].number;
             WagonObject.submenu[1] = {label: language.ArchiveScreen.ArrivedAt + _trainList[i][j].time1};
             if(i != 0 && _trainList[i][j].type == 'departure') {
-                let _loadTime = new Date(new Date('2010-10-10T'+_trainList[i][j].time1+'Z') - new Date('2010-10-10T'+_trainList[i][j].time2+'Z'));
+                let _loadTime = new Date(new Date('2010-10-10T'+_trainList[i][j].time2+'Z') - new Date('2010-10-10T'+_trainList[i][j].time1+'Z'));
 
                 WagonObject.submenu[2] = {label: language.ArchiveScreen.DeparturedAt + _trainList[i][j].time2};
                 WagonObject.submenu[3] = {label: language.ArchiveScreen.LoadTime + ' ' + _loadTime.toUTCString().split(" ")[4]};
