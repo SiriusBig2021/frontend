@@ -52,16 +52,19 @@ export default class LiveDisplayContainer extends React.Component {
                     let wagonState = "";
                     let frames = [];
                     let time1 = "";
+                    let event_id = "";
 
                     for(let i = 0; i < this.state.events.length; i++) {
                         if(this.state.events[i].wagon === wagon) {
                             wagonState = this.state.events[i].state;
                             if(this.state.events[i].type == 'fail') {wagonState = 'fail';}
+                            if(this.state.events[i].wagon.length != 8) {wagonState = 'fail';}
                             frames = this.state.events[i].frames;
                             time1 = this.state.events[i].id.split("T")[1];
+                            event_id = this.state.events[i].id;
                         }
                     }
-                    currentWagonList.push({number: wagon, state: wagonState, frames: frames, time1: time1});
+                    currentWagonList.push({number: wagon, state: wagonState, frames: frames, time1: time1, event_id: event_id});
                 })
 
                 currentWagonList.reverse();
@@ -105,16 +108,19 @@ export default class LiveDisplayContainer extends React.Component {
                 let wagonState = "";
                 let frames = [];
                 let time1 = "";
+                let event_id = "";
 
                 for(let i = 0; i < this.state.events.length; i++) {
                     if(this.state.events[i].wagon === wagon) {
                         wagonState = this.state.events[i].state;
                         if(this.state.events[i].type == 'fail') {wagonState = 'fail';}  
+                        if(this.state.events[i].wagon.length != 8) {wagonState = 'fail';}
                         frames = this.state.events[i].frames;
                         time1 = this.state.events[i].id.split("T")[1];
+                        event_id = this.state.events[i].id;
                     }
                 }
-                currentWagonList.push({number: wagon, state: wagonState, frames: frames, time1: time1});
+                currentWagonList.push({number: wagon, state: wagonState, frames: frames, time1: time1, event_id: event_id});
             })
 
             currentWagonList.reverse();

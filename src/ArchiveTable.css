@@ -211,9 +211,14 @@
 }
 
 .ModalImage {
-    max-height: 100%;
-    max-width: 100%;
-    padding-top: 22px;
+    max-height: 13vh;
+    max-width: 13vw;
+    padding-top: 0px;
+}
+
+.ModalImage2 {
+    max-height: 13vh;
+    max-width: 13vw;
 }
 
 .FullItem {

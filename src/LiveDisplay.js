@@ -3,7 +3,7 @@ import language from "./language.json";
 import "./ArchiveTable.css";
 import React from 'react';
 import Modal from 'react-modal';
-import number_photo_example from './assets/images/number_photo_example.jpg';
+import { db, auth } from "./firebase";
 
 /*const currentWagonList = [
     {number: 13583243, state: 'full', time1: '00:00', time2: '00:00'},
@@ -38,6 +38,21 @@ export default function LiveScreen() {
     }
 
     const handleApplyClick = () => {
+        let _time = new Date();
+        let iso_date = (_time.toISOString()).split('T');
+        let shift_id = "";
+        let shift0_time = new Date(_time - new Date(Date.UTC(2021, 7, 11, 7, 30, 0)));
+        if(shift0_time.getHours() < 12) {
+            shift_id = iso_date[0] + 'T07:30:00';
+        } else {
+            shift_id = iso_date[0] + 'T19:30:00';
+        }
+
+        console.log("current shift is " + shift_id);
+        console.log("current doc id is " + (arguments[0].wagons)[arguments[0].segment-1].event_id);
+
+        db.collection('shift/' + shift_id + '/events').doc((arguments[0].wagons)[arguments[0].segment-1].event_id).update({wagon: inputNumber, state: inputState});
+
         console.log("EDIT: Number is " + inputNumber + ", state is " + inputState);
         setOpen(!open);
     };
@@ -67,7 +82,8 @@ export default function LiveScreen() {
                     >
                         <div className='ModalGridContainer'>
                             <div className='ModalImageSegment'>
-                                <img src={number_photo_example} className='ModalImage'/>
+                            <img src={(arguments[0].wagons)[arguments[0].segment-1].frames[0]} className='ModalImage'/>
+                            <img src={(arguments[0].wagons)[arguments[0].segment-1].frames[1]} className='ModalImage2'/>
                             </div>
                             <div className='ModalContentSegment'>
                                 {language.LiveScreen.WagonsNumber}
