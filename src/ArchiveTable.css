@@ -327,11 +327,10 @@
 
 .FullWagonLiveComponent {
     background-color: #bbbbbb;
-    height: 100%;
 }
 
 .EmptyWagonLiveComponent {
-    background-color: #d3d3d3;
+    background-color: #fff;
 }
 
 .CurrentlyOnStationItem {
