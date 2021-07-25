@@ -81,6 +81,8 @@ export default class LogScreen extends React.Component {
                                     case 'empty':
                                         log.state = language.LogScreen.Empty;
                                         break;
+                                    case 'fail':
+                                        log.type = 'fail';
                                     default:
                                         break;
                                 }
@@ -98,7 +100,7 @@ export default class LogScreen extends React.Component {
                                         break;
                                     case 'fail':
                                         return (
-                                            <div className='LogElementFail'>[{log.id.split("T")[1]}] {log.state} {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
+                                            <div className='LogElementFail'>[{log.id.split("T")[1]}] {language.LogScreen.Wagon} {log.wagon}: {language.LogScreen.Failed}</div>
                                         )
                                         break;
                                     default:
