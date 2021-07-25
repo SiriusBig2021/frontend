@@ -5,16 +5,6 @@ import React from 'react';
 import Modal from 'react-modal';
 import { db, auth } from "./firebase";
 
-/*const currentWagonList = [
-    {number: 13583243, state: 'full', time1: '00:00', time2: '00:00'},
-    {number: 'повреждён', state: 'fail', time1: '00:00', time2: '00:00'},
-    {number: 23235799, state: 'empty', time1: '00:00', time2: '00:00'},
-    {number: 45215452, state: 'full', time1: '00:00', time2: '00:00'},
-    {number: 18451543, state: 'empty', time1: '00:00', time2: '00:00'},
-    {number: 17685410, state: 'full', time1: '00:00', time2: '00:00'},
-    {number: 68713543, state: 'empty', time1: '00:00', time2: '00:00'}
-]*/
-
 export default function LiveScreen() {
     const [open, setOpen] = React.useState(false);
     const [_open, _setOpen] = React.useState(false);
