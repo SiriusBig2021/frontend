@@ -55,7 +55,8 @@
     grid-area: archiveWindow;
     text-align: center;
     background-color: #f0f0f0;
-    max-height: 90vh;
+    height: 89.5vh;
+    max-height: 89.5vh;
 }
 
 .LogWindow {
