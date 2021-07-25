@@ -27,7 +27,7 @@ export default function LiveScreen() {
 
     const _handleClick = () => {
         _setOpen(!_open);
-    }
+    };
 
     const handleClose = () => {
         setOpen(false);
@@ -35,7 +35,7 @@ export default function LiveScreen() {
 
     const _handleClose = () => {
         _setOpen(false);
-    }
+    };
 
     const handleApplyClick = () => {
         let _time = new Date();
@@ -48,12 +48,7 @@ export default function LiveScreen() {
             shift_id = iso_date[0] + 'T19:30:00';
         }
 
-        console.log("current shift is " + shift_id);
-        console.log("current doc id is " + (arguments[0].wagons)[arguments[0].segment-1].event_id);
-
-        db.collection('shift/' + shift_id + '/events').doc((arguments[0].wagons)[arguments[0].segment-1].event_id).update({wagon: inputNumber, state: inputState, changed_by: "Giovanni"});
-
-        console.log("EDIT: Number is " + inputNumber + ", state is " + inputState);
+        db.collection('shift/' + shift_id + '/events').doc((arguments[0].wagons)[arguments[0].segment-1].event_id).update({wagon: inputNumber, state: inputState.toLowerCase(), changed_by: "Giovanni"});
         setOpen(!open);
     };
 

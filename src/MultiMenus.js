@@ -9,11 +9,11 @@ const complexMixin = css`
 `;
 
 const fontsize = {
-  H3FONTSIZE: '23px', //Размер шрифта списка
+  H3FONTSIZE: '2.7vh', //Размер шрифта списка
 }
 
 const fontsize2 = {
-  H3FONTSIZE: '17px', //Размер шрифта описания вагонов в списке
+  H3FONTSIZE: '1.9vh', //Размер шрифта описания вагонов в списке
 }
 
 const UL = styled.ul`
@@ -24,7 +24,7 @@ const UL = styled.ul`
 const LI = styled.li``;
 const Item = styled.div`
   display: flex;
-  padding: ${props => (props.dept-1 ? (props.dept-2 ? '1px' : '5px') : '5px')} 18px;
+  padding: ${props => (props.dept-1 ? (props.dept-2 ? '0.1vh' : '0.4vh') : '0.4vh')};
   border: ${props => (props.dept-1 ? '1px' : '2px')} solid ${props => (props.dept-1 ? (props.dept-2 ? '#f0f0f0' : '#d3d3d3') : 'black')};
   border-radius: 5px;
   align-items: center;
