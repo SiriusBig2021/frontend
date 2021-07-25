@@ -31,7 +31,7 @@ class Clock extends React.Component {
         }
 
         return (
-            <div>{language.ToolBar.TimeGone} {_time.toLocaleTimeString()}</div>
+            <div>{language.ToolBar.TimeGone} {_time.toLocaleString().split(" ")[1]}</div>
         )
     }
 }

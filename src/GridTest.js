@@ -24,7 +24,7 @@ export default function GridTest() {
             </div>
             <div className='LiveWindow'>
                 <button className={logsOpen ? 'HideLogsButton' : 'ShowLogsButton'} onClick={handleClick}>{logsOpen ? '▾ '+language.LogScreen.HideLogs : '▴ '+language.LogScreen.ShowLogs}</button>
-                <LiveDisplayContainer/>
+                <LiveDisplayContainer logsOpen={logsOpen}/>
             </div>
             <div className='ArchiveWindow'>
                 <div className='ContentHolder'>

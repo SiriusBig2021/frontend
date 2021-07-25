@@ -65,7 +65,7 @@ export default function LiveScreen() {
         setInputState(event.target.value);
     }
 
-    if(arguments[0].wagons) {
+    if(arguments[0].wagons && (arguments[0].logsOpen != undefined)) {
     if(arguments[0].wagons.length < arguments[0].segment) {
         return (<div className='LiveWagonEmptyWindow'></div>);
     } else {
@@ -112,7 +112,7 @@ export default function LiveScreen() {
                         isOpen={_open}
                         contentLabel="Wagon info"
                         className="InfoModal"
-                        overlayClassName="InfoModalOverlay"
+                        overlayClassName={(arguments[0].logsOpen ? "InfoModalOverlay" : "InfoModalBigOverlay")}
                         onRequestClose={_handleClose}
                         shouldCloseOnOverlayClick={true}
                     >

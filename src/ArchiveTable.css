@@ -102,10 +102,22 @@
     position: fixed;
     left: 0;
     right: 0;
-    top: 10vh;
+    top: 10.4vh;
     bottom: 0;
-    max-height: 60vh;
-    max-width: 75vw;
+    max-height: 59.6vh;
+    max-width: 74.8vw;
+    background-color: rgba(255, 255, 255, 0.7);
+    z-index: 100;
+}
+
+.InfoModalBigOverlay {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 10.4vh;
+    bottom: 0;
+    max-height: 89.7vh;
+    max-width: 74.8vw;
     background-color: rgba(255, 255, 255, 0.7);
     z-index: 100;
 }

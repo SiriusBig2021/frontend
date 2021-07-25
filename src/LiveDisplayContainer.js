@@ -138,83 +138,84 @@ export default class LiveDisplayContainer extends React.Component {
     }
 
     render() {
+        console.log(this.props.logsOpen);
         if(this.state.wagons) {
         return (
             <div className="LiveWindow2">
                 <div className={this.state.wagons.length < 1 ? 'q1-hidden' : 'q1'}>
-                    <LiveScreen segment={1} wagons={this.state.wagons}/>
+                    <LiveScreen segment={1} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 2 ? 'q2-hidden' : 'q2'}>
-                    <LiveScreen segment={2} wagons={this.state.wagons}/>
+                    <LiveScreen segment={2} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 3 ? 'q3-hidden' : 'q3'}>
-                    <LiveScreen segment={3} wagons={this.state.wagons}/>
+                    <LiveScreen segment={3} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 4 ? 'q4-hidden' : 'q4'}>
-                    <LiveScreen segment={4} wagons={this.state.wagons}/>
+                    <LiveScreen segment={4} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 5 ? 'q5-hidden' : 'q5'}>
-                    <LiveScreen segment={5} wagons={this.state.wagons}/>
+                    <LiveScreen segment={5} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 6 ? 'q6-hidden' : 'q6'}>
-                    <LiveScreen segment={6} wagons={this.state.wagons}/>
+                    <LiveScreen segment={6} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 7 ? 'q7-hidden' : 'q7'}>
-                    <LiveScreen segment={7} wagons={this.state.wagons}/>
+                    <LiveScreen segment={7} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 8 ? 'q8-hidden' : 'q8'}>
-                    <LiveScreen segment={8} wagons={this.state.wagons}/>
+                    <LiveScreen segment={8} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 9 ? 'q9-hidden' : 'q9'}>
-                    <LiveScreen segment={9} wagons={this.state.wagons}/>
+                    <LiveScreen segment={9} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 10 ? 'q10-hidden' : 'q10'}>
-                    <LiveScreen segment={10} wagons={this.state.wagons}/>
+                    <LiveScreen segment={10} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 11 ? 'q11-hidden' : 'q11'}>
-                    <LiveScreen segment={11} wagons={this.state.wagons}/>
+                    <LiveScreen segment={11} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 12 ? 'q12-hidden' : 'q12'}>
-                    <LiveScreen segment={12} wagons={this.state.wagons}/>
+                    <LiveScreen segment={12} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 13 ? 'q13-hidden' : 'q13'}>
-                    <LiveScreen segment={13} wagons={this.state.wagons}/>
+                    <LiveScreen segment={13} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 14 ? 'q14-hidden' : 'q14'}>
-                    <LiveScreen segment={14} wagons={this.state.wagons}/>
+                    <LiveScreen segment={14} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 15 ? 'q15-hidden' : 'q15'}>
-                    <LiveScreen segment={15} wagons={this.state.wagons}/>
+                    <LiveScreen segment={15} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 16 ? 'q16-hidden' : 'q16'}>
-                    <LiveScreen segment={16} wagons={this.state.wagons}/>
+                    <LiveScreen segment={16} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 17 ? 'q17-hidden' : 'q17'}>
-                    <LiveScreen segment={17} wagons={this.state.wagons}/>
+                    <LiveScreen segment={17} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 18 ? 'q18-hidden' : 'q18'}>
-                    <LiveScreen segment={18} wagons={this.state.wagons}/>
+                    <LiveScreen segment={18} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 19 ? 'q19-hidden' : 'q19'}>
-                    <LiveScreen segment={19} wagons={this.state.wagons}/>
+                    <LiveScreen segment={19} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 20 ? 'q20-hidden' : 'q20'}>
-                    <LiveScreen segment={20} wagons={this.state.wagons}/>
+                    <LiveScreen segment={20} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 21 ? 'q21-hidden' : 'q21'}>
-                    <LiveScreen segment={21} wagons={this.state.wagons}/>
+                    <LiveScreen segment={21} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={(this.state.wagons).length < 22 ? 'q22-hidden' : 'q22'}>
-                    <LiveScreen segment={22} wagons={this.state.wagons}/>
+                    <LiveScreen segment={22} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 23 ? 'q23-hidden' : 'q23'}>
-                    <LiveScreen segment={23} wagons={this.state.wagons}/>
+                    <LiveScreen segment={23} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 24 ? 'q24-hidden' : 'q24'}>
-                    <LiveScreen segment={24} wagons={this.state.wagons}/>
+                    <LiveScreen segment={24} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
                 <div className={this.state.wagons.length < 25 ? 'q25-hidden' : 'q25'}>
-                    <LiveScreen segment={25} wagons={this.state.wagons}/>
+                    <LiveScreen segment={25} wagons={this.state.wagons} logsOpen={this.props.logsOpen}/>
                 </div>
             </div>
         )
